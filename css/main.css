@@ -8,12 +8,12 @@ html {
 }
 
 body {
-	background-color: #0A0A0A;
+	background-color: #999;
 	width:100%;
 	height:100%;
 	padding: 0;
 	margin: 0;
-	color: #CCC;
+	color: #000;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 }
@@ -36,7 +36,7 @@ a:hover {
 }
 
 h1 {
-	color: #2BB1E6;
+	color: #2867A5;
 	font-weight: bold;
 	font-size: 30px;
 	text-transform: uppercase;
@@ -46,7 +46,7 @@ h1 {
 }
 
 h2 {
-	color: #FFF;
+	color: #000;
 	font-weight: bold;
 	font-size: 24px;
 	text-align: center;
@@ -83,7 +83,7 @@ input:hover, input:focus{
 }
 
 div.block-contenu {
-	background-color: #151515;
+	background-color: #DDD;
 	border: 1px solid #555;
 	display: inline-block;
 	text-align: justify;
@@ -115,29 +115,30 @@ input {
 	transition: 0.5s;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1) inset;
 }
 
 input.button_submit {
-	background-color: #235F0E;
+	background-color: #338914;
 	color: #EEE;
 }
 
 input.button_submit:hover, input.button_submit:focus{
 	transition: 0.2s;
 	color: #FFF;
-	background-color: #2F7E13;
+	background-color: #46B91E;
 	border: none;
 }
 
 input.button_cancel {
-	background-color: #5F0E0E;
+	background-color: #751010;
 	color: #EEE;
 }
 
 input.button_cancel:hover, input.button_cancel:focus{
 	transition: 0.2s;
 	color: #FFF;
-	background-color: #7E1313;
+	background-color: #A71818;
 	border: none;
 }
 
@@ -154,35 +155,68 @@ hr {
 	text-align: center;
 	float: center;
 	width: 150px;
-	height: 150px;
 	padding: 5px;
+	padding-top: 68px;
+	padding-bottom: 68px;
 	margin: 5px;
 	color: #000;
+	transition: 0.2s;
+	background-color: #BBB;
+	box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1) inset;
 }
 
+.clock-grid:hover {
+	background-color: #FFF;
+}
+/*
 .clock-grid.red {
 	background-color: #A00;
+}
+
+.clock-grid.red:hover {
+	background-color: #C00;
 }
 
 .clock-grid.orange {
 	background-color: #D88C1B;
 }
 
+.clock-grid.orange:hover {
+	background-color: #E69521;
+}
+
 .clock-grid.yellow {
 	background-color: #E7E734;
+}
+
+.clock-grid.yellow:hover {
+	background-color: #F7F740;
 }
 
 .clock-grid.green {
 	background-color: #2BD52B;
 }
 
+.clock-grid.green:hover {
+	background-color: #35E537;
+}
+
 .clock-grid.blue {
 	background-color: #254AB7;
+}
+
+.clock-grid.blue:hover {
+	background-color: #3258C7;
 }
 
 .clock-grid.purple {
 	background-color: #852AC2;
 }
+
+.clock-grid.purple:hover {
+	background-color: #9335D2;
+}
+*/
 
 
 
@@ -193,11 +227,12 @@ hr {
 	padding: 5px;
 	padding-left: 0px;
 	padding-right: 0px;
-	background-color: #111;
+	background-color: #BBB;
 	text-align: center;
+	box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1) inset;
 }
 
 .clock-list-element:hover{
 	transition: 0.5s;
-	background-color: #000;
+	background-color: #FFF;
 }

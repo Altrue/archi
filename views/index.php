@@ -15,12 +15,12 @@
 			</form></div>
 			<div class="block-contenu"><h2>Test grille graphique</h2></div>
 			<div class="block-contenu">
-				<div class="clock-grid red">Test</div>
-				<div class="clock-grid orange">test</div>
-				<div class="clock-grid yellow">Test</div>
-				<div class="clock-grid green">test</div>
-				<div class="clock-grid blue">Test</div>
-				<div class="clock-grid purple">test</div>
+				<div class="clock-grid">Test</div>
+				<div class="clock-grid">test</div>
+				<div class="clock-grid">Test</div>
+				<div class="clock-grid">test</div>
+				<div class="clock-grid">Test</div>
+				<div class="clock-grid">test</div>
 			</div>
 			<div class="block-contenu"><h2>Test liste</h2></div>
 			<div class="block-contenu no-padding">
