@@ -1,5 +1,5 @@
 <?php
-	require_once('/php/connexion/connectDBClass.php');
+	require_once('/connexion/connectDBClass.php');
 	class collection {
 		//attributs
 		private $listObjet;

@@ -1,14 +1,21 @@
 <?php
 	//Chiffrement des données sensibles : toutes données pouvant ammené à l'identité de la personne
-	require_once('/php/connexion/connectDBClass.php');
+	require_once('/connexion/connectDBClass.php');
+	require_once('/class/collection.php');
 	class user {
 		//attributs
 		private $loginUtil;
-		private $mdpUtil;
-		private $nomUtil;
-		private $prenomUtil;
+		//collection de timeZone
+		private $listTz;
 		
 		//méthodes
+		//constructeur
+		public function __construct($var){
+			$this->loginUtil = $var;
+			$this->listTz = new collection();
+			//remplir liste
+		}
+		
 		//get
 		public function getLoginUtil(){
 			return $this->loginUtil;
@@ -34,16 +41,13 @@
 			$this->mdpUtil = $var;
 		}
 		
-		//DELETE d'un utilisateur
-		public function deleteUtilisateur(){
-			if(!empty($this->loginUtil)){
-				$pdo = connectDB::getInstance();
-				$request = $pdo->quote("DELETE FROM USER WHERE idUtil=".$pdo->quote($this->loginUtil).";");
-				$pdo->exec($request);
-				unset($pdo);
-			}
-			else{
-				throw new Exception('Delete impossible !');
-			}
+		//ajoute une timezone à la collection
+		public function addTz($libelle, $gtm){
+		
+		}
+		
+		//supprime une timezone de la collection
+		public function deleteTz($libelle){
+		
 		}
 	}
