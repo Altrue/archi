@@ -132,19 +132,19 @@ input:hover, input:focus{
 	width: 15%;
 	min-width: 90px;
 	height: 100%;
-	background-image:url("../librairie/refresh.png");
+	background-image:url("../images/refresh.png");
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
 .td-refresh:hover {
-	background-image:url("../librairie/refresh2.png");
+	background-image:url("../images/refresh2.png");
 }
 
 .td-logo {
 	width: 70%;
 	height: 100%;
-	background-image:url("../librairie/logo.png");
+	background-image:url("../images/logo.png");
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -154,13 +154,13 @@ input:hover, input:focus{
 	min-width: 90px;
 	height: 100%;
 	background-color: #FFF;
-	background-image:url("../librairie/plus.png");
+	background-image:url("../images/plus.png");
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
 .td-plus:hover {
-	background-image:url("../librairie/plus2.png");
+	background-image:url("../images/plus2.png");
 }
 
 .buttom-bar {
@@ -210,18 +210,12 @@ input:hover, input:focus{
     padding-top: 100%;
 }
 .clock-grid-content{
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    color: #fff;
+	width: 100%;
+	height: 100%;
+	@include vertical-align;
 }
 div.clock-grid-content {
-   display: table;
-   width: 100%;
-   height: 100%;
-   @include vertical-align;
+
 }
 
 @mixin vertical-align {
