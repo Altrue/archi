@@ -1,15 +1,12 @@
 <?php
 	class connectDB {
 		//attributs
-		private $host = '127.0.0.1';
-		private $base = 'tz_project';
-		private $user = 'tz_user';
-		private $password = 'tz_pwd';
 		private static $pdoInstance = null;
 		//méthodes
 		//constructeur
 		private function __construct(){
-			$this->pdoInstance = new PDO('mysql:host='.$this->host.';dbname='.$this->base,$this->user,$this->password);
+			$myIniFile = parse_ini_file ("/config/conf.ini",TRUE);
+			$this->pdoInstance = new PDO('mysql:host='.$myIniFile['host'].';dbname='.$myIniFile['base'],$myIniFile['user'],$myIniFile['password']);
 		}
 		//connexion à une base
 		//retourne un objet PDO

@@ -1,7 +1,7 @@
 <?php
 	//ajouter le blocage du compte pour plus de 5 tentatives
 
-	require_once('/connexion/connectDBClass.php');
+	require_once('/librairie/connectDBClass.php');
 	class session {
 		//attribut
 		private $loginUtil;
