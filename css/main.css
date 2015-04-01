@@ -18,14 +18,15 @@ body {
 	height:100%;
 	padding: 0;
 	margin: 0;
-	color: #000;
+	color: #FFF;
 	font-family: 'roboto';
 	font-size: 25px;
 	background-color: #373643;
+	text-transform:uppercase;
 }
 
 b, strong {
-	color: #DDD;
+	color: #FFF;
 }
 
 a {
@@ -174,12 +175,19 @@ input:hover, input:focus{
 	height: 90px;
 	margin: 0px;
 	padding: 0px;
+	cursor:default;
+}
+
+.buttom-bar:hover {
+	color: #FFF;
 }
 
 .clock-grid{
-    position: relative;
-    width: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
     overflow: hidden;
+	text-align: center;
 }
 .orange1 {
 	background-color:#eeb934;
@@ -204,24 +212,62 @@ input:hover, input:focus{
 .violet3 {
 	background-color:#413d93;
 }
-.clock-grid:before{
-    content:"";
-    display: block;
-    padding-top: 100%;
-}
-.clock-grid-content{
-	width: 100%;
-	height: 100%;
-	@include vertical-align;
-}
-div.clock-grid-content {
-
-}
-
-@mixin vertical-align {
+.text p {
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.clock-square {
+	width: 100%;
+	position:relative;
+	top:0;
+	left:0;
+	z-index:-1;
+}
+
+.clock-grid-content {
+	height:0px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.td-clock-grid {
+	width: 50%;
+}
+
+div.clock-grid-content {
+	display:inline-block;
+	width: 100%;
+    height: 25px;
+	margin-bottom:-500px;
+	padding-top: 70%;
+}
+
+.clock-titre {
+	font-size:26px;
+}
+
+.clock-sous-titre {
+	font-size:20px;
+}
+
+@media (max-width:800px) {
+	.clock-titre {
+		font-size:20px;
+	}
+
+	.clock-sous-titre {
+		font-size:16px;
+	}
+}
+
+@media (max-width:500px) {
+	.clock-titre {
+		font-size:15px;
+	}
+
+	.clock-sous-titre {
+		font-size:12px;
+	}
 }
