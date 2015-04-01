@@ -1,8 +1,9 @@
 <?php
-	require_once('/class/formulaire.php');
-	require_once('/class/session.php');
-	require_once('/connexion/connectDBClass.php');
+	require_once('/librairie/formulaire.php');
+	require_once('/librairie/session.php');
+	require_once('/librairie/connectDBClass.php');
 	class loginController {
+	
 		private $view;
 		
 		public function loginAction(){
