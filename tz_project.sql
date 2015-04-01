@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `timezone`
 --
 
-CREATE TABLE IF NOT EXISTS `timezone` (
+CREATE TABLE IF NOT EXISTS `TIMEZONE` (
   `id` int(11) NOT NULL,
   `libelle` varchar(100) NOT NULL,
   `gtm` varchar(50) NOT NULL
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `timezone` (
 -- Structure de la table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE IF NOT EXISTS `USER` (
   `id` int(11) NOT NULL,
   `loginUser` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Structure de la table `zoneuser`
 --
 
-CREATE TABLE IF NOT EXISTS `zoneuser` (
+CREATE TABLE IF NOT EXISTS `ZONEUSER` (
   `id` int(11) NOT NULL,
   `idUser` int(11) NOT NULL,
   `idZone` int(11) NOT NULL
@@ -62,19 +62,19 @@ CREATE TABLE IF NOT EXISTS `zoneuser` (
 --
 -- Index pour la table `timezone`
 --
-ALTER TABLE `timezone`
+ALTER TABLE `TIMEZONE`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE `USER`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `zoneuser`
 --
-ALTER TABLE `zoneuser`
+ALTER TABLE `ZONEUSER`
   ADD PRIMARY KEY (`id`), ADD KEY `fk_id_user` (`idUser`), ADD KEY `fk_id_zone` (`idZone`);
 
 --
@@ -84,17 +84,17 @@ ALTER TABLE `zoneuser`
 --
 -- AUTO_INCREMENT pour la table `timezone`
 --
-ALTER TABLE `timezone`
+ALTER TABLE `TIMEZONE`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE `USER`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `zoneuser`
 --
-ALTER TABLE `zoneuser`
+ALTER TABLE `ZONEUSER`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Contraintes pour les tables exportées
@@ -103,9 +103,9 @@ ALTER TABLE `zoneuser`
 --
 -- Contraintes pour la table `zoneuser`
 --
-ALTER TABLE `zoneuser`
-ADD CONSTRAINT `fk_id_zone` FOREIGN KEY (`idZone`) REFERENCES `timezone` (`id`),
-ADD CONSTRAINT `fk_id_user` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`);
+ALTER TABLE `ZONEUSER`
+ADD CONSTRAINT `fk_id_zone` FOREIGN KEY (`idZone`) REFERENCES `TIMEZONE` (`id`),
+ADD CONSTRAINT `fk_id_user` FOREIGN KEY (`idUser`) REFERENCES `USER` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
