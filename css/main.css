@@ -16,6 +16,7 @@ body {
 	background-color: #999;
 	width:100%;
 	height:100%;
+	min-height:400px;
 	padding: 0;
 	margin: 0;
 	color: #FFF;
@@ -241,7 +242,7 @@ div.clock-grid-content {
 	width: 100%;
     height: 25px;
 	margin-bottom:-500px;
-	padding-top: 70%;
+	padding-top: 30%;
 }
 
 .clock-titre {
@@ -252,6 +253,10 @@ div.clock-grid-content {
 	font-size:20px;
 }
 
+.clock-time {
+	font-size: 90px;
+}
+
 @media (max-width:800px) {
 	.clock-titre {
 		font-size:20px;
@@ -260,6 +265,10 @@ div.clock-grid-content {
 	.clock-sous-titre {
 		font-size:16px;
 	}
+	
+	.clock-time {
+	font-size: 60px;
+}
 }
 
 @media (max-width:500px) {
@@ -270,4 +279,111 @@ div.clock-grid-content {
 	.clock-sous-titre {
 		font-size:12px;
 	}
+	
+	.clock-time {
+	font-size: 40px;
+}
+}
+
+.clock-line{
+    width: 100%;
+	height: 25%;
+    overflow: hidden;
+	text-align: center;
+}
+
+.clock-line-content {
+	height:100%;
+	vertical-align: middle;
+	text-align: center;
+}
+
+div.clock-line-content {
+	vertical-align: middle;
+	display:inline-block;
+	width: 100%;
+    height: 100%;
+	padding-top:10px;
+}
+
+.clock-line-titre {
+	font-size:26px;
+	float:left;
+	padding-left: 10px;
+}
+
+.clock-line-sous-titre {
+	font-size:20px;
+	float:left;
+	padding-left: 10px;
+}
+
+.clock-line-time {
+	font-size: 90px;
+	float:right;
+	padding-right: 10px;
+	padding-top:5%;
+}
+
+@media (max-height:700px) {
+	.clock-line-titre {
+		font-size:20px;
+	}
+
+	.clock-line-sous-titre {
+		font-size:16px;
+	}
+	
+	.clock-line-time {
+		font-size: 60px;
+	}
+	
+	div.clock-line-content {
+		padding-top:5px;
+	}
+}
+
+@media (max-height:500px) {
+	.clock-line-titre {
+		font-size:18px;
+	}
+
+	.clock-line-sous-titre {
+		font-size:14px;
+	}
+	
+	.clock-line-time {
+		font-size: 50px;
+	}
+	
+	div.clock-line-content {
+		padding-top:0px;
+	}
+}
+
+@media (max-width:400px) {
+	.clock-line-titre {
+		font-size:17px;
+	}
+
+	.clock-line-sous-titre {
+		font-size:13px;
+	}
+	
+	.clock-line-time {
+	font-size: 45px;
+}
+
+@media (max-height:400px) {
+	.clock-line-titre {
+		font-size:16px;
+	}
+
+	.clock-line-sous-titre {
+		font-size:12px;
+	}
+	
+	.clock-line-time {
+	font-size: 40px;
+}
 }
