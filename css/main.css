@@ -1,5 +1,10 @@
 /* TZ_Project : CSS Principal */
 
+@font-face {
+    font-family: roboto;
+    src: url(../font/Roboto-Medium.ttf);
+}
+
 html {
 	width:100%;
 	height:100%;
@@ -14,12 +19,9 @@ body {
 	padding: 0;
 	margin: 0;
 	color: #000;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 15px;
-	background-image:url("../images/bg_main.jpg");
-	background-position:center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+	font-family: 'roboto';
+	font-size: 25px;
+	background-color: #373643;
 }
 
 b, strong {
@@ -81,167 +83,151 @@ input:hover, input:focus{
 }
 
 #main {
-	width: 700px;
-	height: auto;
+	width: 70%;
+	height: 100%;
 	margin: auto;
-	padding-left: 50px;
-	padding-right: 60px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	background-color: rgba(0,0,0,0.1);
+	background-color: transparent;
 }
 
-div.block-contenu {
-	background-color: rgba(255,255,255,0.7);
-	border: 1px solid #555;
+@media (max-width: 800px) {
+	#main {
+		width: 553px;
+	}
+}
+
+@media (max-width: 553px) {
+	#main {
+		width: 100%;
+	}
+}
+
+.block-contenu {
+	background-color: #f2f2f7;
+	border: 1px solid rgba(0,0,0,0.2);
 	display: inline-block;
-	text-align: justify;
-	width: 100%;
-	margin: 5px;
-	padding: 5px;
-}
-
-div.no-padding {
-	padding:0px !important;
-	width: 710px;
-}
-
-.button_submit, .button_cancel {
-	width: 300px;
-}
-
-form.centered {
 	text-align: center;
-}
-
-input {
-	border: none;
-	transition: 1s;
-	font-size: 23px;
-	padding: 10px;
-	padding-left:3px;
-	padding-right:3px;
-	transition: 0.5s;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1) inset;
-}
-
-input.button_submit {
-	background-color: #338914;
-	color: #EEE;
-}
-
-input.button_submit:hover, input.button_submit:focus{
-	transition: 0.2s;
-	color: #FFF;
-	background-color: #46B91E;
-	border: none;
-}
-
-input.button_cancel {
-	background-color: #751010;
-	color: #EEE;
-}
-
-input.button_cancel:hover, input.button_cancel:focus{
-	transition: 0.2s;
-	color: #FFF;
-	background-color: #A71818;
-	border: none;
-}
-
-hr {
-	border: none;
-	border-top: 1px solid #444;
-	padding: 0px;
+	width: 100%;
 	margin: 0px;
+	padding: 0px;
+}
+
+.top-bar {
+	background-color: #f2f2f7;
+	border: none;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	height: 90px;
+	margin: 0px;
+	padding: 0px;
+	top:0px;
+}
+
+.table-top-bar {
+	width: 100%;
+	height: 100%;
+}
+
+.td-refresh {
+	width: 15%;
+	min-width: 90px;
+	height: 100%;
+	background-image:url("../librairie/refresh.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.td-refresh:hover {
+	background-image:url("../librairie/refresh2.png");
+}
+
+.td-logo {
+	width: 70%;
+	height: 100%;
+	background-image:url("../librairie/logo.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.td-plus {
+	width: 15%;
+	min-width: 90px;
+	height: 100%;
+	background-color: #FFF;
+	background-image:url("../librairie/plus.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.td-plus:hover {
+	background-image:url("../librairie/plus2.png");
+}
+
+.buttom-bar {
+	background-color: #1d1c24;
+	color: #a7a4b4;
+	border: none;
+	display: inline-block;
+	text-align: center;
+	line-height: 90px;
+	width: 100%;
+	height: 90px;
+	margin: 0px;
+	padding: 0px;
 }
 
 .clock-grid{
-	display: inline-block;
-	border: none;
-	text-align: center;
-	float: center;
-	width: 150px;
-	padding: 5px;
-	padding-top: 68px;
-	padding-bottom: 68px;
-	margin: 5px;
-	color: #000;
-	transition: 0.2s;
-	background-color: #BBB;
-	box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1) inset;
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+}
+.orange1 {
+	background-color:#eeb934;
 }
 
-.clock-grid:hover {
-	background-color: #FFF;
-}
-/*
-.clock-grid.red {
-	background-color: #A00;
+.orange2 {
+	background-color:#e7a235;
 }
 
-.clock-grid.red:hover {
-	background-color: #C00;
+.orange3 {
+	background-color:#dd7632;
 }
 
-.clock-grid.orange {
-	background-color: #D88C1B;
+.violet1 {
+	background-color:#6f64bf;
 }
 
-.clock-grid.orange:hover {
-	background-color: #E69521;
+.violet2 {
+	background-color:#5b52aa;
 }
 
-.clock-grid.yellow {
-	background-color: #E7E734;
+.violet3 {
+	background-color:#413d93;
+}
+.clock-grid:before{
+    content:"";
+    display: block;
+    padding-top: 100%;
+}
+.clock-grid-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+}
+div.clock-grid-content {
+   display: table;
+   width: 100%;
+   height: 100%;
+   @include vertical-align;
 }
 
-.clock-grid.yellow:hover {
-	background-color: #F7F740;
-}
-
-.clock-grid.green {
-	background-color: #2BD52B;
-}
-
-.clock-grid.green:hover {
-	background-color: #35E537;
-}
-
-.clock-grid.blue {
-	background-color: #254AB7;
-}
-
-.clock-grid.blue:hover {
-	background-color: #3258C7;
-}
-
-.clock-grid.purple {
-	background-color: #852AC2;
-}
-
-.clock-grid.purple:hover {
-	background-color: #9335D2;
-}
-*/
-
-
-
-.clock-list-element{
-	display: inline-block;
-	border: none;
-	width: 100%;
-	padding: 5px;
-	padding-left: 0px;
-	padding-right: 0px;
-	background-color: #BBB;
-	text-align: center;
-	box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1) inset;
-}
-
-.clock-list-element:hover{
-	transition: 0.5s;
-	background-color: #FFF;
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
