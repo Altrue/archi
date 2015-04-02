@@ -10,12 +10,9 @@ $(document).ready(function(){
 			Exemple : UTC+2 s'écrit 2. UTC+5:30 s'écrit 5.5
 		"Line" représente la ligne.
 			Exemple : 1, 2, 3, 4, etc...
-		"Lavel" représente le texte à affiche.
-			Exemple : labelville = "Paris", labelpays = "France"
-			= Paris, FRANCE.
 		*/
 		
-		function time(offset,line,labelville, labelpays) {
+		function time(offset,line) {
 		
 			var d = new Date();
 			var localTime = d.getTime();
@@ -50,10 +47,6 @@ $(document).ready(function(){
 			resultat_heure = h+':'+m;
 			document.getElementById(id_heure).innerHTML = resultat_heure;
 			
-			var id_ville = "line"+line+"-2";
-			resultat_ville = "<b>"+labelville+" </b>"+labelpays;
-			document.getElementById(id_ville).innerHTML = resultat_ville;
-			
 			var id_date = "line"+line+"-3";
 			resultat_date = jours[jour]+' '+j+' '+mois[moi]+' '+annee;
 			document.getElementById(id_date).innerHTML = resultat_date;
@@ -61,21 +54,21 @@ $(document).ready(function(){
 		}
 	
 	/* Appelé une fois au lancement, car sinon durant la première seconde, la page n'est pas prête. */
-	time(2,1,"paris","france");
-	time(1,2,"London","UK");
-	time(0,3,"Reykjavik","Island");
-	time(-6,4,"New York","USA");
-	time(3.5,5,"Colombo","India");
-	time(9,6,"Sydney","Australia");
+	time(2,1);
+	time(1,2);
+	time(0,3);
+	time(-6,4);
+	time(3.5,5);
+	time(9,6);
 	
 	/* Dans cette fonction, le code est appellé toutes les 1000ms (1 seconde) */
 	setInterval(function(){
-		time(2,1,"paris","france");
-		time(1,2,"London","UK");
-		time(0,3,"Reykjavik","Island");
-		time(-6,4,"New York","USA");
-		time(3.5,5,"Colombo","India");
-		time(9,6,"Sydney","Australia");
+		time(2,1);
+		time(1,2);
+		time(0,3);
+		time(-6,4);
+		time(3.5);
+		time(9,6);
 	}, 1000);
 });
 </script>

@@ -245,9 +245,6 @@ input:hover, input:focus{
 
 .clock-square {
 	width: 100%;
-	position:relative;
-	top:0;
-	left:0;
 	z-index:-1;
 }
 
@@ -263,10 +260,11 @@ input:hover, input:focus{
 
 div.clock-grid-content {
 	display:inline-block;
+	position:relative;
+	top:0px;
+	margin:auto;
 	width: 100%;
-    height: 25px;
-	margin-bottom:-500px;
-	padding-top: 30%;
+	padding-bottom: 50%;
 }
 
 .clock-titre {
