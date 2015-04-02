@@ -457,9 +457,8 @@ div.clock-line-content {
 .search-line-content {
 	height:100%;
 	width: 100%;
-	vertical-align: middle;
 	text-align: left;
-	padding-top: 25px;
+	padding-top: 33px;
 	padding-left: 20px;
 	color:#a7a4b4;
 }
@@ -492,6 +491,7 @@ div.clock-line-content {
 .td-search-text {
 	width:90%;
 	min-width:90%;
+	vertical-align: middle;
 }
 
 .td-search-check-icon {
@@ -520,10 +520,6 @@ div.clock-line-content {
 	.search-line-sous-titre {
 		font-size:18px;
 	}
-	
-	div.search-line-content {
-		padding-top:20px;
-	}
 }
 
 @media (max-width:400px) {
@@ -536,6 +532,18 @@ div.clock-line-content {
 	}
 }
 
+@media (max-height:550px) {
+	div.search-line-content {
+		padding-top: 23px;
+	}
+}
+
+@media (max-height:500px) {
+	div.search-line-content {
+		padding-top: 20px;
+	}
+}
+
 @media (max-height:400px) {
 	.search-line-titre {
 		font-size:17px;
@@ -543,5 +551,9 @@ div.clock-line-content {
 
 	.search-line-sous-titre {
 		font-size:13px;
+	}
+	
+	div.search-line-content {
+		padding-top: 18px;
 	}
 }
