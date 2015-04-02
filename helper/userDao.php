@@ -16,6 +16,18 @@
 			return self::$instance;
 		}
 		
+		//sélectionne un utilisateur par son login, retourne null ou un objet user
+		public function findUserByLog($log){
+			$user = null;
+			$pdostat = $this->query("SELECT * FROM USER WHERE loginUser = ".$log.";");
+			if($pdostat != null){
+				$res = $pdostat->fetch();
+				$user = new user($res['id'], $res['loginUser']);
+				$pdostat->closeCursor();
+			}
+			return $user;
+		}
+		
 		//sélectionne un utilisateur par son id, retourne null ou un objet user
 		public function findUserById($id){
 			$user = null;

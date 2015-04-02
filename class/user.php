@@ -26,6 +26,9 @@
 		public function getId(){
 			return $this->id;
 		}
+		public function getListTz(){
+			return $this->listTz;
+		}
 		//set
 		public function setListTz($arrayTz){
 			$this->listTz->setListObjet($arrayTz);

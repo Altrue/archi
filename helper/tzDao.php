@@ -16,7 +16,7 @@
 			return self::$instance;
 		}
 		
-		//sélectionne un utilisateur par son id, retourne null ou un objet user
+		//sélectionne une tz par son id, retourne null ou un objet tz
 		public function findTzById($id){
 			$tz = null;
 			$pdostat = $this->findById($id);
@@ -28,7 +28,7 @@
 			return $tz;
 		}
 		
-		//sélectionne tous les utilisateurs, retourne un tableau de user ou null
+		//sélectionne toutes les tz, retourne un tableau de tz ou null
 		public function findAllTz(){
 			$tabTz = null;
 			$pdostat = $this->findAll();
