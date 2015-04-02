@@ -88,7 +88,7 @@
 						$secure=false;
 					}
 					else{
-						$this->value=hash("sha512",$this->value);
+						$this->value=hash("sha256",$this->value);
 					}
 				break;
 				case "date":

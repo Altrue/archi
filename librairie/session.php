@@ -1,7 +1,7 @@
 <?php
 	//ajouter le blocage du compte pour plus de 5 tentatives
 
-	require_once('/librairie/connectDBClass.php');
+	require_once('connectDBClass.php');
 	class session {
 		//attribut
 		private $loginUser;
@@ -22,11 +22,12 @@
 		public function connectUtilisateur($mdp){
 			$retour = 0;
 			if(!empty($this->loginUser) && !empty($mdp)){
-				$pdo = connectDB::getInstance();
+				$co = new connectDB();
+				$pdo = $co->connectBase();
 				$pdostat = $pdo->query("SELECT mdpUser FROM USER WHERE loginUser=".$pdo->quote($this->loginUser).";");
-				if($pdostat->columnCount() == 1){
+				if($pdostat->rowCount() == 1){
 					$res = $pdostat->fetch();
-					if($res['mdpUtil'] == $mdp){
+					if($res['mdpUser'] == $mdp){
 						$_SESSION['user'] = serialize($this);
 						$retour = 1;
 					}
@@ -38,7 +39,7 @@
 		}
 		public function changerMdp($mdp){
 			$pdo = connectDB::getInstance();
-			$pdo->exec("UPDATE USER SET mdpUtil = ".$pdo->quote($mdp)." WHERE loginUser = ".$pdo->quote($this->loginUser).";");
+			$pdo->exec("UPDATE USER SET mdpUser = ".$pdo->quote($mdp)." WHERE loginUser = ".$pdo->quote($this->loginUser).";");
 			unset($pdo);
 		}
 	}

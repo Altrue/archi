@@ -1,6 +1,6 @@
 <?php	
-	require_once('/class/collection.php');
-	require_once('/class/input.php');
+	require_once('../librairie/collection.php');
+	require_once('../librairie/input.php');
 	class formulaire {
 		//attributs
 		private $name;
