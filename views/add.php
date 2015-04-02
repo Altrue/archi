@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<header>
 		<link rel="stylesheet" type="text/css" href="../css/main.css" />
@@ -100,9 +101,10 @@
 					</tr>
 				</table>
 			</div>
-		<a href="list.php"><div class="buttom-bar buttom-bar-add"><span>ADD LOCATION</span></div></a>
+		<a href="list.php"><div class="bottom-bar bottom-bar-add"><span>Double-cliquez sur une coche pour valider</span></div></a>
 	</body>
 
 <?php
 
 ?>
+</html>

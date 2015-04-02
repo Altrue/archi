@@ -71,7 +71,7 @@ input {
 	color: #AAA;
 	border: 1px solid #444;
 	transition: 1s;
-	font-size: 20px;
+	font-size: 30px;
 }
 
 input:hover, input:focus{
@@ -119,6 +119,7 @@ input:hover, input:focus{
 	margin: 0px;
 	padding: 0px;
 	top:0px;
+	margin-bottom: -7px;
 }
 
 .table-top-bar {
@@ -175,7 +176,7 @@ input:hover, input:focus{
 	background-image:url("../images/plus2.png");
 }
 
-.buttom-bar {
+.bottom-bar {
 	background-color: #1d1c24;
 	color: #a7a4b4;
 	border: none;
@@ -189,18 +190,18 @@ input:hover, input:focus{
 	cursor:default;
 }
 
-.buttom-bar:hover {
+.bottom-bar:hover {
 	color: #FFF;
 }
 
 /* Utilisé pour le add */
 
-.buttom-bar-add {
+.bottom-bar-add {
 	background-color:#5b52aa !important;
 	color:#CCC !important;
 }
 
-.buttom-bar-add:hover {
+.bottom-bar-add:hover {
 	color:#FFF !important;
 }
 
@@ -506,6 +507,34 @@ div.clock-line-content {
 
 /* Catégorie : Responsive Add*/
 
+@media(max-width: 1000px) {
+	div.bottom-bar-add {
+		font-size: 20px !important;
+	}
+	
+	div.bottom-bar-login{
+		font-size: 22px !important;
+	}	
+}
+
+@media(max-width: 650px) {
+	div.bottom-bar-add {
+		font-size: 16px !important;
+	}
+	div.bottom-bar-login{
+		font-size: 18px !important;
+	}	
+}
+
+@media(max-width: 450px) {
+	div.bottom-bar-add {
+		font-size: 12px !important;
+	}
+	div.bottom-bar-login{
+		font-size: 12px !important;
+	}	
+}
+
 @media(max-width:430px){
 	.td-search-title{
 		font-size:21px;
@@ -556,4 +585,113 @@ div.clock-line-content {
 	div.search-line-content {
 		padding-top: 18px;
 	}
+}
+
+/* Catégorie : Login */
+.bottom-bar-login {
+	background-color: #1d1c24;
+	color: #a7a4b4;
+	border: none;
+	display: inline-block;
+	text-align: center;
+	line-height: 90px;
+	width: 100%;
+	height: 90px;
+	margin: 0px;
+	padding: 0px;
+	cursor:default;
+}
+
+.bottom-bar-login:hover {
+	color: #a7a4b4;
+}
+
+.login-line {
+	width: 100%;
+	height: 63%;
+    overflow: hidden;
+	text-align: center;
+	min-height:350px;
+}
+
+.login-line-content {
+	height:100%;
+	width: 100%;
+	text-align: center;
+	padding-top: 10px;
+	color:#a7a4b4;
+}
+
+.nightblue1 {
+	background-color:#272530;
+}
+
+.nightblue2 {
+	background-color:#1d1c24;
+}
+
+.login-line-titre {
+	font-size:40px;
+}
+
+.login-line-sous-titre {
+	font-size:25px;
+}
+
+.login-check-icon {
+	width: 100%;
+	height: 100%;
+	background-image:url("../images/check.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor:default;
+}
+
+.td-login-text {
+	width:90%;
+	min-width:90%;
+	vertical-align: middle;
+}
+
+.td-login-check-icon {
+	width: 10%;
+	min-width: 27px;
+	height: 100%;
+}
+
+.login-check-icon:hover {
+	background-image:url("../images/check2.png");
+}
+
+.submit-login {
+	border: none;
+	background-color:#111;
+	transition: 0.2s;
+	text-transform: uppercase;
+	font-size: 25px;
+	padding:5px;
+	width:50%;
+	min-width:280px;
+	font-family: 'roboto';
+}
+
+.submit-login:hover,.submit-login:focus,.submit-login:active {
+	border: none;
+	background-color:#252525;
+	transition: 0.2s;
+}
+
+
+.input-login {
+	font-size: 20px;
+	border: none;
+	background-color:#111;
+	transition: 0.2s;
+	font-family: 'roboto';
+}
+
+.input-login:hover,.input-login:focus,.input-login:active {
+	border: none;
+	background-color:#252525;
+	transition: 0.2s;
 }

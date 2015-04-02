@@ -1,3 +1,4 @@
+<!DOCTYPE html> 
 <html>
 	<header>
 		<link rel="stylesheet" type="text/css" href="../css/main.css" />
@@ -72,9 +73,10 @@
 					</td>
 				</tr>
 			</table>
-			<a href="list.php"><div class="buttom-bar"><span>SWITCH TO LIST VIEW</span></div></a>
+			<a href="list.php"><div class="bottom-bar"><span>SWITCH TO LIST VIEW</span></div></a>
 	</body>
 
 <?php
 
 ?>
+</html>

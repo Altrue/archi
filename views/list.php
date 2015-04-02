@@ -1,8 +1,10 @@
+<!DOCTYPE html> 
 <html>
 	<header>
 		<link rel="stylesheet" type="text/css" href="../css/main.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
-	<header>
+		<?php include ('../config/header.php'); ?>
+	</header>
 	<body>
 		<div id="main">
 			<div class="top-bar">
@@ -52,9 +54,10 @@
 						<span class="clock-line-sous-titre">TUESDAY, MAY 07, 2013</span>
 					</div>
 				</div>
-			<a href="grid.php"><div class="buttom-bar"><span>SWITCH TO GRID VIEW</span></div></a>
+			<a href="grid.php"><div class="bottom-bar"><span>SWITCH TO GRID VIEW</span></div></a>
 	</body>
 
 <?php
 
 ?>
+</html>
