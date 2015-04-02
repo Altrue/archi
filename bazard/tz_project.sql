@@ -40,7 +40,8 @@ CREATE TABLE IF NOT EXISTS `TIMEZONE` (
 
 CREATE TABLE IF NOT EXISTS `USER` (
   `id` int(11) NOT NULL,
-  `loginUser` varchar(100) NOT NULL
+  `loginUser` varchar(100) NOT NULL,
+  `mdpUser` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

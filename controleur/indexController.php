@@ -2,7 +2,7 @@
 	require_once('/librairie/formulaire.php');
 	require_once('/librairie/session.php');
 	require_once('/librairie/connectDBClass.php');
-	class loginController {
+	class indexController {
 	
 		private $view;
 		
@@ -29,7 +29,7 @@
 		
 		public function logoutAction(){
 			if(isset($_SESSION['user'])){
-				unset($_SESSION['utilisateur']);
+				unset($_SESSION['user']);
 				session_destroy();
 			}
 		}
