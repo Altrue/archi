@@ -7,7 +7,7 @@
 		<div id="main">
 			<div class="top-bar">
 				<table class="table-top-bar">
-					<tr><td class="td-refresh"></td><td class="td-logo"></td><td class="td-plus"></td></tr>
+					<tr><td class="td-refresh"><a href=""><div class="td-refresh-div"></div></a></td><td class="td-logo"></td><td class="td-plus"><a href="add.php"><div class="td-plus-div"></div></a></td></tr>
 				</table>
 			</div>
 			<table style="border-collapse:collapse;" cellspacing="0" cellpadding="0">
@@ -72,11 +72,8 @@
 					</td>
 				</tr>
 			</table>
-			<div class="buttom-bar"><span>SWITCH TO LIST VIEW</span></div>
+			<a href="list.php"><div class="buttom-bar"><span>SWITCH TO LIST VIEW</span></div></a>
 	</body>
-<?php
-
-?>
 
 <?php
 

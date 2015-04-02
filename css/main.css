@@ -1,5 +1,5 @@
 /* TZ_Project : CSS Principal */
-
+/* Catégorie : Général*/
 @font-face {
     font-family: roboto;
     src: url(../font/Roboto-Medium.ttf);
@@ -32,15 +32,11 @@ b, strong {
 
 a {
 	color: #5BE;
-	text-shadow: 0 0 10px transparent;
 	text-decoration: none;
-	transition: 0.5s;
 }
 
 a:hover {
 	color: #6CF;
-	transition: 0.2s;
-	text-shadow: 0 0 5px #6CF;
 }
 
 h1 {
@@ -132,14 +128,21 @@ input:hover, input:focus{
 
 .td-refresh {
 	width: 15%;
+	height: 100%;
+	min-width:90px;
+}
+
+.td-refresh-div {
+	width: 100%;
 	min-width: 90px;
 	height: 100%;
 	background-image:url("../images/refresh.png");
 	background-repeat: no-repeat;
 	background-position: center;
+	cursor:default;
 }
 
-.td-refresh:hover {
+.td-refresh-div:hover {
 	background-image:url("../images/refresh2.png");
 }
 
@@ -153,15 +156,22 @@ input:hover, input:focus{
 
 .td-plus {
 	width: 15%;
+	height: 100%;
+	min-width:90px;
+}
+
+.td-plus-div {
+	width: 100%;
 	min-width: 90px;
 	height: 100%;
 	background-color: #FFF;
 	background-image:url("../images/plus.png");
 	background-repeat: no-repeat;
 	background-position: center;
+	cursor:default;
 }
 
-.td-plus:hover {
+.td-plus-div:hover {
 	background-image:url("../images/plus2.png");
 }
 
@@ -182,6 +192,19 @@ input:hover, input:focus{
 .buttom-bar:hover {
 	color: #FFF;
 }
+
+/* Utilisé pour le add */
+
+.buttom-bar-add {
+	background-color:#5b52aa !important;
+	color:#CCC !important;
+}
+
+.buttom-bar-add:hover {
+	color:#FFF !important;
+}
+
+/* Catégorie : Grid*/
 
 .clock-grid{
     background-size: contain;
@@ -256,7 +279,7 @@ div.clock-grid-content {
 .clock-time {
 	font-size: 90px;
 }
-
+/* Catégorie : Responsive Grid*/
 @media (max-width:800px) {
 	.clock-titre {
 		font-size:20px;
@@ -284,6 +307,8 @@ div.clock-grid-content {
 	font-size: 40px;
 }
 }
+
+/* Catégorie : Line*/
 
 .clock-line{
     width: 100%;
@@ -324,6 +349,8 @@ div.clock-line-content {
 	padding-right: 10px;
 	padding-top:5%;
 }
+
+/* Catégorie : Responsive Line*/
 
 @media (max-height:700px) {
 	.clock-line-titre {
@@ -372,6 +399,7 @@ div.clock-line-content {
 	
 	.clock-line-time {
 	font-size: 45px;
+	}
 }
 
 @media (max-height:400px) {
@@ -385,5 +413,135 @@ div.clock-line-content {
 	
 	.clock-line-time {
 	font-size: 40px;
+	}
 }
+
+/* Catégorie : Add*/
+
+.td-search-title {
+	width: 85%;
+	height: 100%;
+	min-width:90px;
+	color:#a7a4b4;
+	font-size:35px;
+	padding-left:2%;
+}
+
+.td-search-icon {
+	width: 15%;
+	height: 100%;
+	min-width:90px;
+}
+
+.td-search-div {
+	width: 100%;
+	min-width: 90px;
+	height: 100%;
+	background-image:url("../images/search.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor:default;
+}
+
+.td-search-div:hover {
+	background-image:url("../images/search2.png");
+}
+
+.search-line {
+	width: 100%;
+	height: 20%;
+    overflow: hidden;
+	text-align: left;
+}
+
+.search-line-content {
+	height:100%;
+	width: 100%;
+	vertical-align: middle;
+	text-align: left;
+	padding-top: 25px;
+	padding-left: 20px;
+	color:#a7a4b4;
+}
+
+.nightblue1 {
+	background-color:#272530;
+}
+
+.nightblue2 {
+	background-color:#1d1c24;
+}
+
+.search-line-titre {
+	font-size:26px;
+}
+
+.search-line-sous-titre {
+	font-size:20px;
+}
+
+.search-check-icon {
+	width: 100%;
+	height: 100%;
+	background-image:url("../images/check.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor:default;
+}
+
+.td-search-text {
+	width:90%;
+	min-width:90%;
+}
+
+.td-search-check-icon {
+	width: 10%;
+	min-width: 27px;
+	height: 100%;
+}
+
+.search-check-icon:hover {
+	background-image:url("../images/check2.png");
+}
+
+/* Catégorie : Responsive Add*/
+
+@media(max-width:430px){
+	.td-search-title{
+		font-size:21px;
+	}
+}
+
+@media (max-height:500px) {
+	.search-line-titre {
+		font-size:24px;
+	}
+
+	.search-line-sous-titre {
+		font-size:18px;
+	}
+	
+	div.search-line-content {
+		padding-top:20px;
+	}
+}
+
+@media (max-width:400px) {
+	.search-line-titre {
+		font-size:17px;
+	}
+
+	.search-line-sous-titre {
+		font-size:13px;
+	}
+}
+
+@media (max-height:400px) {
+	.search-line-titre {
+		font-size:17px;
+	}
+
+	.search-line-sous-titre {
+		font-size:13px;
+	}
 }

@@ -7,7 +7,7 @@
 		<div id="main">
 			<div class="top-bar">
 				<table class="table-top-bar">
-					<tr><td class="td-refresh"></td><td class="td-logo"></td><td class="td-plus"></td></tr>
+					<tr><td class="td-refresh"><a href=""><div class="td-refresh-div"></div></a></td><td class="td-logo"></td><td class="td-plus"><a href="add.php"><div class="td-plus-div"></div></a></td></tr>
 				</table>
 			</div>
 				<div class="clock-line orange1">
@@ -52,11 +52,8 @@
 						<span class="clock-line-sous-titre">TUESDAY, MAY 07, 2013</span>
 					</div>
 				</div>
-			<div class="buttom-bar"><span>SWITCH TO LIST VIEW</span></div>
+			<a href="grid.php"><div class="buttom-bar"><span>SWITCH TO GRID VIEW</span></div></a>
 	</body>
-<?php
-
-?>
 
 <?php
 
