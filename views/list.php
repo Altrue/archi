@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	require_once('../librairie/formulaire.php');
+	require_once('../librairie/session.php');
+	require_once('../helper/userDao.php');
+	require_once('../helper/tzDao.php');
+?>
 <!DOCTYPE html> 
 <html>
 	<header>
@@ -12,48 +19,28 @@
 					<tr><td class="td-refresh"><a href=""><div class="td-refresh-div"></div></a></td><td class="td-logo"></td><td class="td-plus"><a href="add.php"><div class="td-plus-div"></div></a></td></tr>
 				</table>
 			</div>
-				<div class="clock-line orange1">
+			<?php
+			$x = 0;
+			$tabColor = array('orange1', 'orange2', 'orange3', 'violet1', 'violet2', 'violet3');
+			$userDAO = userDao::getInstance();
+			$user = $userDAO->findUserByLog(unserialize($_SESSION['user'])->getLoginUser());
+			$zone = zoneUserDao::getInstance();
+			$zone->findByUser($user);
+			$collec = $user->getListTz();
+			foreach($collec as $timeZone){
+				list($p, $v) = explode('/', $timeZone->getLibelle());
+				?>
+				<div class="clock-line <?php echo $tabColor[$x%6]; ?>">
 					<div class="clock-line-content">
-						<span id="line1-1" class="clock-line-time"></span><br>
-						<span id="line1-2" class="clock-line-titre"><b>PARIS</b> FRANCE</span><br>
-						<span id="line1-3" class="clock-line-sous-titre">TUESDAY, MAY 07, 2013</span>
+						<span id="line<?php echo $x;?>-1" data-utc="<?php echo $timeZone->getGtm();?>" class="clock-line-time"></span><br>
+						<span id="line<?php echo $x;?>-2" class="clock-line-titre"><b> <?php echo $p;?></b> <?php echo $v;?></span><br>
+						<span id="line<?php echo $x;?>-3" class="clock-line-sous-titre"></span>
 					</div>
 				</div>
-				<div class="clock-line orange2">
-					<div class="clock-line-content">
-						<span id="line2-1" class="clock-line-time">08:45</span><br>
-						<span id="line2-2" class="clock-line-titre"><b>SAO PAULO</b> BRAZIL</span><br>
-						<span id="line2-3" class="clock-line-sous-titre">TUESDAY, MAY 07, 2013</span>
-					</div>
-				</div>
-				<div class="clock-line orange3">
-					<div class="clock-line-content">
-						<span id="line3-1" class="clock-line-time">08:45</span><br>
-						<span id="line3-2" class="clock-line-titre"><b>SIDNEY</b> AUSTRALIA</span><br>
-						<span id="line3-3" class="clock-line-sous-titre">TUESDAY, MAY 07, 2013</span>
-					</div>
-				</div>
-				<div class="clock-line violet1">
-					<div class="clock-line-content">
-						<span id="line4-1" class="clock-line-time">08:45</span><br>
-						<span id="line4-2" class="clock-line-titre"><b>LONDON</b> UK</span><br>
-						<span id="line4-3" class="clock-line-sous-titre">TUESDAY, MAY 07, 2013</span>
-					</div>
-				</div>
-				<div class="clock-line violet2">
-					<div class="clock-line-content">
-						<span id="line5-1" class="clock-line-time">08:45</span><br>
-						<span id="line5-2" class="clock-line-titre"><b>PARIS</b> FRANCE</span><br>
-						<span id="line5-3" class="clock-line-sous-titre">TUESDAY, MAY 07, 2013</span>
-					</div>
-				</div>
-				<div class="clock-line violet3">
-					<div class="clock-line-content">
-						<span id="line6-1" class="clock-line-time">08:45</span><br>
-						<span id="line6-2" class="clock-line-titre"><b>ATHENE</b> GREECE</span><br>
-						<span id="line6-3" class="clock-line-sous-titre">TUESDAY, MAY 07, 2013</span>
-					</div>
-				</div>
+				<?php
+				$x++;
+			}
+			?>
 			<a href="grid.php"><div class="bottom-bar"><span>SWITCH TO GRID VIEW</span></div></a>
 	</body>
 

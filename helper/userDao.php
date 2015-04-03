@@ -1,7 +1,7 @@
 <?php
-	require_once('/librairie/DAOClass.php');
-	require_once('/librairie/connectDBClass.php');
-	require_once('/class/user.php');
+	require_once('../librairie/DAOClass.php');
+	require_once('../librairie/connectDBClass.php');
+	require_once('../class/user.php');
 	
 	class userDao extends DAOClass {
 		
