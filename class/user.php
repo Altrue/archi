@@ -1,8 +1,8 @@
 <?php
 	//Chiffrement des données sensibles : toutes données pouvant ammené à l'identité de la personne
-	require_once('/librairie/connectDBClass.php');
-	require_once('/librairie/collection.php');
-	require_once('/class/timeZone.php');
+	require_once('../librairie/connectDBClass.php');
+	require_once('../librairie/collection.php');
+	require_once('../class/timeZone.php');
 	
 	class user {
 		//attributs

@@ -1,5 +1,5 @@
 <?php
-	require_once('/librairie/connectDBClass.php');
+	require_once('../librairie/connectDBClass.php');
 
 	abstract class DAOClass {
 	
@@ -9,9 +9,11 @@
 		//éxécute une requete SELECT et renvoi le résultat pdostatement ou null
 		public function query($request){
 			$res = null;
-			$pdo = connectDB::getInstance();
+			$co = new connectDB();
+			$pdo = $co->connectBase();
 			$pdostat = $pdo->query($request);
-			if($pdostat->columnCount() != 0){
+			var_dump($pdo->query($request));
+			if($pdostat->rowCount() != 0){
 				$res = $pdostat;
 			}
 			$pdostat->closeCursor();
@@ -22,7 +24,8 @@
 		//éxécute une requete DELETE, INSERT, UPDATE
 		public function execute($request){
 			$res = null;
-			$pdo = connectDB::getInstance();
+			$co = new connectDB();
+			$pdo = $co->connectBase();
 			$pdo->exec($request);
 			unset($pdo);
 			return $res;
@@ -31,9 +34,10 @@
 		//renvoi un outil pdostatement ou null si 0 résultat
 		public function findById($id){
 			$res = null;
-			$pdo = connectDB::getInstance();
+			$co = new connectDB();
+			$pdo = $co->connectBase();
 			$pdostat = $pdo->query("SELECT * FROM ".$tableName." WHERE id = ".$id.";");
-			if($pdostat->columnCount() == 1){
+			if($pdostat->rowCount() == 1){
 				$res = $pdostat;
 			}
 			$pdostat->closeCursor();
@@ -44,9 +48,10 @@
 		//renvoi un outil pdostatement ou null si 0 résultat
 		public function findAll(){
 			$res = null;
-			$pdo = connectDB::getInstance();
+			$co = new connectDB();
+			$pdo = $co->connectBase();
 			$pdostat = $pdo->query("SELECT * FROM ".$tableName.";");
-			if($pdostat->columnCount() != 0){
+			if($pdostat->rowCount() != 0){
 				$res = $pdostat;
 			}
 			$pdostat->closeCursor();
@@ -56,7 +61,8 @@
 		
 		//insert le tableau de donnée qui doit être de la forme $t['column']=value_column
 		public function insert($fields){
-			$pdo = connectDB::getInstance();
+			$co = new connectDB();
+			$pdo = $co->connectBase();
 			$keyRequest = "";
 			$valRequest = "";
 			foreach($fields as $key => &$value){
@@ -74,7 +80,8 @@
 		
 		//met à jour un enregistrement
 		public function update($fields, $id){
-			$pdo = connectDB::getInstance();
+			$co = new connectDB();
+			$pdo = $co->connectBase();
 			$request = "";
 			foreach($fields as $key => &$value){
 				$request = $request.",".$key."=";
@@ -90,7 +97,8 @@
 		
 		//supprime un enregistrement
 		public function delete($id){
-			$pdo = connectDB::getInstance();
+			$co = new connectDB();
+			$pdo = $co->connectBase();
 			$pdo->exec("DELETE FROM ".$tableName." WHERE id = ".$id.";");
 			unset($pdo);
 		}
