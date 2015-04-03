@@ -207,13 +207,19 @@ input:hover, input:focus{
 
 /* Catégorie : Grid*/
 
+
+.clock-grid:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+   
 .clock-grid{
-    background-size: contain;
-    background-repeat: no-repeat;
+    position: relative;
     width: 100%;
     overflow: hidden;
-	text-align: center;
 }
+
 .orange1 {
 	background-color:#eeb934;
 }
@@ -244,38 +250,51 @@ input:hover, input:focus{
 }
 
 .clock-square {
-	width: 100%;
+	width: 50%;
+	margin-top:-110%;
+	padding:0;
 	z-index:-1;
-}
-
-.clock-grid-content {
-	height:0px;
-	vertical-align: middle;
-	text-align: center;
 }
 
 .td-clock-grid {
 	width: 50%;
 }
 
-div.clock-grid-content {
-	display:inline-block;
-	position:relative;
-	top:0px;
-	margin:auto;
-	width: 100%;
-	padding-bottom: 50%;
+.clock-grid-subcontent {
+	text-align:center;
 }
 
-.clock-titre {
+.clock-grid-content {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: white;
+}
+
+.clock-grid-content div{
+   display: table;
+   width: 100%;
+   height: 100%;
+}
+
+.clock-grid-content span{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+
+.clock-grid-titre {
 	font-size:26px;
 }
 
-.clock-sous-titre {
+.clock-grid-sous-titre {
 	font-size:20px;
 }
 
-.clock-time {
+.clock-grid-time {
 	font-size: 90px;
 }
 /* Catégorie : Responsive Grid*/
@@ -692,4 +711,9 @@ div.clock-line-content {
 	border: none;
 	background-color:#252525;
 	transition: 0.2s;
+}
+
+/* CSS magic */
+.invisible-tr {
+	font-size: 0px;
 }
