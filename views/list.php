@@ -1,9 +1,6 @@
 <?php
 	session_start();
-	require_once('../librairie/formulaire.php');
-	require_once('../librairie/session.php');
-	require_once('../helper/userDao.php');
-	require_once('../helper/tzDao.php');
+	require_once('../controleur/mainController.php');
 ?>
 <!DOCTYPE html> 
 <html>
@@ -22,11 +19,7 @@
 			<?php
 			$x = 0;
 			$tabColor = array('orange1', 'orange2', 'orange3', 'violet1', 'violet2', 'violet3');
-			$userDAO = userDao::getInstance();
-			$user = $userDAO->findUserByLog(unserialize($_SESSION['user'])->getLoginUser());
-			$zone = zoneUserDao::getInstance();
-			$zone->findByUser($user);
-			$collec = $user->getListTz();
+			$collec = mainController::selectTzAction();
 			foreach($collec as $timeZone){
 				list($p, $v) = explode('/', $timeZone->getLibelle());
 				?>

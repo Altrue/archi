@@ -6,25 +6,18 @@
 	
 	class zoneUserDao extends DAOClass {
 		
-		private function __construct(){
+		public function __construct(){
 			$this->tableName = "ZONEUSER";
 		}
 		
-		public static function getInstance(){
-			if(is_null(self::$instance)){
-				self::$instance = new zoneUserDao();
-			}
-			return self::$instance;
-		}
-		
 		//ajoute toutes les zones du user à sa collection (réinitialisé au préalable)
-		public function findByUser(&$user){
-			$pdostat = $this->query("SELECT * FROM ZONEUSER WHERE idUser = ".$user->getId().";");
+		public function findByUser($pdo, &$user){
+			$pdostat = $this->query($pdo, "SELECT * FROM ZONEUSER WHERE idUser = ".$user->getId().";");
 			if($pdostat != null){
-				$user->setListObjet(array());
-				$tzDao = tzDao::getInstance();
+				$user->setListTz(array());
+				$tzDao = new tzDao();
 				while($res = $pdostat->fetch()){
-					$tz = $tzDao->findTzById($res['idZone']);
+					$tz = $tzDao->findTzById($pdo, $res['idZone']);
 					$user->addTz($tz);
 				}
 				$pdostat->closeCursor();
@@ -32,18 +25,18 @@
 		}
 		
 		//insert un enregistrement
-		public function insertZone(&$user, $tz){
+		public function insertZone($pdo, &$user, $tz){
 			$fields = array(
 				'idUser' => $user->getId(),
 				'idZone' => $tz->getId()
 			);
-			$this->insert($fields);
+			$this->insert($pdo, $fields);
 			$user->addTz($tz);
 		}
 		
 		//delete un enregistrement
-		public function deleteZone(&$user, $tz){
-			$this->execute("DELETE FROM ZONEUSER WHERE idUser = ".$user->getId()." AND idZone = ".$tz->getId().";");
+		public function deleteZone($pdo, &$user, $tz){
+			$this->execute($pdo, "DELETE FROM ZONEUSER WHERE idUser = ".$user->getId()." AND idZone = ".$tz->getId().";");
 			$user->deleteTz($tz);
 		}
 	}

@@ -5,21 +5,14 @@
 	
 	class tzDao extends DAOClass {
 		
-		private function __construct(){
+		public function __construct(){
 			$this->tableName = "TIMEZONE";
 		}
 		
-		public static function getInstance(){
-			if(is_null(self::$instance)){
-				self::$instance = new tzDao();
-			}
-			return self::$instance;
-		}
-		
 		//sélectionne une tz par son id, retourne null ou un objet tz
-		public function findTzById($id){
+		public function findTzById($pdo, $id){
 			$tz = null;
-			$pdostat = $this->findById($id);
+			$pdostat = $this->findById($pdo, $id);
 			if($pdostat != null){
 				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'timeZone', array('id','libelle','gtm'));
 				$tz = $pdostat->fetch();
@@ -29,9 +22,9 @@
 		}
 		
 		//sélectionne toutes les tz, retourne un tableau de tz ou null
-		public function findAllTz(){
+		public function findAllTz($pdo){
 			$tabTz = null;
-			$pdostat = $this->findAll();
+			$pdostat = $this->findAll($pdo);
 			if($pdostat != null){
 				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'timeZone', array('id','libelle','gtm'));
 				while($tz = $pdostat->fetch()){
@@ -43,16 +36,16 @@
 		}
 		
 		//insert un user
-		public function insertTz($tz){
+		public function insertTz($pdo, $tz){
 			$fields = array(
 				'libelle' => $tz->getLibelle(),
 				'gtm' => $tz->getGtm()
 			);
-			$this->insert($fields);
+			$this->insert($pdo, $fields);
 		}
 		
 		//delete un user
-		public function deleteTz($tz){
-			$this->delete($tz->getId());
+		public function deleteTz($pdo, $tz){
+			$this->delete($pdo, $tz->getId());
 		}
 	}

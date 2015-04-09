@@ -5,21 +5,19 @@
 	
 	class userDao extends DAOClass {
 		
-		private function __construct(){
+		public function __construct(){
 			$this->tableName = "USER";
 		}
 		
-		public static function getInstance(){
-			if(is_null(self::$instance)){
-				self::$instance = new userDao();
-			}
-			return self::$instance;
-		}
-		
-		//sélectionne un utilisateur par son login, retourne null ou un objet user
-		public function findUserByLog($log){
+		//sélectionne un utilisateur par son login et mdp si besoin, retourne null ou un objet user
+		public function findUserByLog($pdo, $log, $mdp = null){
 			$user = null;
-			$pdostat = $this->query("SELECT * FROM USER WHERE loginUser = ".$log.";");
+			if($mdp == null){
+				$pdostat = $this->query($pdo, "SELECT * FROM USER WHERE loginUser = ".$pdo->quote($log).";");
+			}
+			else{
+				$pdostat = $this->query($pdo, "SELECT * FROM USER WHERE loginUser = ".$pdo->quote($log)." AND mdpUser = ".$pdo->quote($mdp).";");
+			}
 			if($pdostat != null){
 				$res = $pdostat->fetch();
 				$user = new user($res['id'], $res['loginUser']);
@@ -29,9 +27,9 @@
 		}
 		
 		//sélectionne un utilisateur par son id, retourne null ou un objet user
-		public function findUserById($id){
+		public function findUserById($pdo, $id){
 			$user = null;
-			$pdostat = $this->findById($id);
+			$pdostat = $this->findById($pdo, $id);
 			if($pdostat != null){
 				$res = $pdostat->fetch();
 				$user = new user($res['id'], $res['loginUser']);
@@ -41,9 +39,9 @@
 		}
 		
 		//sélectionne tous les utilisateurs, retourne un tableau de user ou null
-		public function findAllUser(){
+		public function findAllUser($pdo){
 			$tabUser = null;
-			$pdostat = $this->findAll();
+			$pdostat = $this->findAll($pdo);
 			if($pdostat != null){
 				while($res = $pdostat->fetch()){
 					$tabUser[] = new user($res['id'], $res['loginUser']);
@@ -54,15 +52,15 @@
 		}
 		
 		//insert un user
-		public function insertUser($user){
+		public function insertUser($pdo, $user){
 			$fields = array(
 				'login' => $user->getLoginUser()
 			);
-			$this->insert($fields);
+			$this->insert($pdo, $fields);
 		}
 		
 		//delete un user
-		public function deleteUser($user){
-			$this->delete($user->getId());
+		public function deleteUser($pdo, $user){
+			$this->delete($pdo, $user->getId());
 		}
 	}
