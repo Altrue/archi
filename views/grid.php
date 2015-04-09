@@ -3,7 +3,7 @@
 	<header>
 		<link rel="stylesheet" type="text/css" href="../css/main.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
-		<?php include ('../config/header.php'); ?>
+		<?php include ('../utilities/header.php'); ?>
 	</header>
 	<body>
 		<div id="main">
