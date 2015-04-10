@@ -5,13 +5,13 @@
 <script type="text/javascript" src="../js/moment-tz.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+
 		/* Affiche la date et l'heure d'une timezone.
 		"Offset" représente le décalage horaire.
 			Exemple : UTC+2 s'écrit 2. UTC+5:30 s'écrit 5.5
 		"Line" représente la ligne.
 			Exemple : 1, 2, 3, 4, etc...
 		*/
-		
 		function time(offset,line) {
 		
 			var d = new Date();
@@ -53,6 +53,7 @@ $(document).ready(function(){
 			return true;
 		}
 	
+	/* Actualise toutes les heures */
 	function refreshTime() {
 		time($("#line1-1").attr('data-utc'),1);
 		time($("#line2-1").attr('data-utc'),2);
@@ -65,9 +66,12 @@ $(document).ready(function(){
 	/* Appelé une fois au lancement, car sinon durant la première seconde, la page n'est pas prête. */
 	refreshTime();
 	
+	var x = 0;
+	
 	/* Dans cette fonction, le code est appellé toutes les 1000ms (1 seconde) */
 	setInterval(function(){
 		refreshTime();
 	}, 1000);
+	
 });
 </script>

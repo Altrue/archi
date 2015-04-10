@@ -21,7 +21,7 @@
 									<span class="clock-grid-span">
 										<span id="line1-1" class="clock-grid-time" data-utc="2"></span><br>
 										<span id="line1-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
-										<span id="line1-3" class="clock-grid-sous-titre">TUESDAY, MAY 07, 2013</span>
+										<span id="line1-3" class="clock-grid-sous-titre"></span>
 									</span>
 								</div>
 							</div>
@@ -34,7 +34,7 @@
 									<span class="clock-grid-span">
 										<span id="line2-1" class="clock-grid-time" data-utc="1"></span><br>
 										<span id="line2-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
-										<span id="line2-3" class="clock-grid-sous-titre">TUESDAY, MAY 07, 2013</span>
+										<span id="line2-3" class="clock-grid-sous-titre"></span>
 									</span>
 								</div>
 							</div>
@@ -49,7 +49,7 @@
 									<span class="clock-grid-span">
 										<span id="line3-1" class="clock-grid-time" data-utc="0"></span><br>
 										<span id="line3-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
-										<span id="line3-3" class="clock-grid-sous-titre">TUESDAY, MAY 07, 2013</span>
+										<span id="line3-3" class="clock-grid-sous-titre"></span>
 									</span>
 								</div>
 							</div>
@@ -62,7 +62,7 @@
 									<span class="clock-grid-span">
 										<span id="line4-1" class="clock-grid-time" data-utc="-2"></span><br>
 										<span id="line4-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
-										<span id="line4-3" class="clock-grid-sous-titre">TUESDAY, MAY 07, 2013</span>
+										<span id="line4-3" class="clock-grid-sous-titre"></span>
 									</span>
 								</div>
 							</div>
@@ -77,7 +77,7 @@
 									<span class="clock-grid-span">
 										<span id="line5-1" class="clock-grid-time" data-utc="-8.5"></span><br>
 										<span id="line5-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
-										<span id="line5-3" class="clock-grid-sous-titre">TUESDAY, MAY 07, 2013</span>
+										<span id="line5-3" class="clock-grid-sous-titre"></span>
 									</span>
 								</div>
 							</div>
@@ -90,7 +90,7 @@
 									<span class="clock-grid-span">
 										<span id="line6-1" class="clock-grid-time" data-utc="8.5"></span><br>
 										<span id="line6-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
-										<span id="line6-3" class="clock-grid-sous-titre">TUESDAY, MAY 07, 2013</span>
+										<span id="line6-3" class="clock-grid-sous-titre"></span>
 									</span>
 								</div>
 							</div>
