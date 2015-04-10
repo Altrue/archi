@@ -53,22 +53,21 @@ $(document).ready(function(){
 			return true;
 		}
 	
+	function refreshTime() {
+		time($("#line1-1").attr('data-utc'),1);
+		time($("#line2-1").attr('data-utc'),2);
+		time($("#line3-1").attr('data-utc'),3);
+		time($("#line4-1").attr('data-utc'),4);
+		time($("#line5-1").attr('data-utc'),5);
+		time($("#line6-1").attr('data-utc'),6);
+	}
+	
 	/* Appelé une fois au lancement, car sinon durant la première seconde, la page n'est pas prête. */
-	time(2,1);
-	time(1,2);
-	time(0,3);
-	time(-6,4);
-	time(3.5,5);
-	time(9,6);
+	refreshTime();
 	
 	/* Dans cette fonction, le code est appellé toutes les 1000ms (1 seconde) */
 	setInterval(function(){
-		time(2,1);
-		time(1,2);
-		time(0,3);
-		time(-6,4);
-		time(3.5);
-		time(9,6);
+		refreshTime();
 	}, 1000);
 });
 </script>
