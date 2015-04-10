@@ -1,10 +1,10 @@
 <?php
-	require_once('/librairie/formulaire.php');
-	require_once('/librairie/session.php');
-	require_once('/librairie/connectDBClass.php');
-	class indexController {
+	require_once('../librairie/formulaire.php');
+	require_once('../librairie/session.php');
+	require_once('../librairie/connectDBClass.php');
+	require_once('../librairie/ControllerInterface.php');
 	
-		private $view;
+	class indexController extends controller implements ControllerInterface{
 		
 		public function loginAction(){
 			if(isset($_POST['connexion'])){
