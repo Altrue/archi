@@ -1,6 +1,6 @@
 <?php
 	class View{
-		/** Ne pas echapper la variable */
+		/** Ne pas échapper la variable */
 		const NO_ESCAPE = 1;
 		/**
 		* Ensemble des variables utilisable dans la vue
@@ -8,7 +8,7 @@
 		*/
 		protected $variables = array();
 		/**
-		* Dossier où sont situer les vues
+		* Dossier où sont situées les vues
 		* @var string
 		*/
 		protected $viewFolder;
@@ -32,7 +32,7 @@
 		$this->viewFolder = $path;
 		}
 		/**
-		* Défini la vue à charger
+		* Définit la vue à charger
 		* @param string $filePath Chemin dans le dossier des vue
 		* @throws BadMethodCallException Si le dossier de base des vues n'est pas défini
 		* @throws InvalidArgumentException Si la vue n'existe pas
@@ -46,7 +46,7 @@
 		throw new \InvalidArgumentException('Can\'t find the ' . $this->view . 'view');
 		}
 		/**
-		* Défini une variable de vue. La variable sera ensuite utilisable dans la vue via sa clé
+		* Définit une variable de vue. La variable sera ensuite utilisable dans la vue via sa clé
 		* @param string $key
 		* @param mixed $value
 		* @param int $option

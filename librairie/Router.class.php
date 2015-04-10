@@ -276,7 +276,7 @@ class Router
 			}
         }
     }
-
+	
     /**
      * Défini le chemin des controllers
      * @param string $path
@@ -322,7 +322,7 @@ class Router
 	{
 		$this->tradController = $trad;
 	}
-
+	
     /**
      * Défini le controller et l'action par défaut
      * @param string $controller
@@ -333,7 +333,7 @@ class Router
         $this->defaultController    = $controller;
         $this->defaultAction        = $action;
     }
-
+	
     /**
      * Défini le controller et l'action en cas d'erreur
      * @param string $controler
@@ -344,7 +344,7 @@ class Router
         $this->errorController  = $controller;
         $this->errorAction      = $action;
     }
-
+	
     /**
      * Renvoi les paramètres disponibles
      * @return array
@@ -353,7 +353,7 @@ class Router
     {
         return $this->params;
     }
-
+	
     /**
      * Supprime d'un tableau tous les élements vide
      * @param array $array

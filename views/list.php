@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require_once('../controleur/mainController.php');
+	require_once('../controller/mainController.php');
 ?>
 <!DOCTYPE html> 
 <html>

@@ -18,7 +18,7 @@
 						<div class="clock-grid orange1">
 							<div class="clock-grid-content">
 								<div class="clock-grid-subcontent">
-									<span>
+									<span class="clock-grid-span">
 										<span id="line1-1" class="clock-grid-time"></span><br>
 										<span id="line1-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
 										<span id="line1-3" class="clock-grid-sous-titre">TUESDAY, MAY 07, 2013</span>
@@ -31,10 +31,38 @@
 						<div class="clock-grid orange2">
 							<div class="clock-grid-content">
 								<div class="clock-grid-subcontent">
-									<span>
+									<span class="clock-grid-span">
 										<span id="line2-1" class="clock-grid-time"></span><br>
 										<span id="line2-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
 										<span id="line2-3" class="clock-grid-sous-titre">TUESDAY, MAY 07, 2013</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-clock-grid">
+						<div class="clock-grid orange3">
+							<div class="clock-grid-content">
+								<div class="clock-grid-subcontent">
+									<span class="clock-grid-span">
+										<span id="line3-1" class="clock-grid-time"></span><br>
+										<span id="line3-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
+										<span id="line3-3" class="clock-grid-sous-titre">TUESDAY, MAY 07, 2013</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</td>
+					<td class="td-clock-grid">
+						<div class="clock-grid violet1">
+							<div class="clock-grid-content">
+								<div class="clock-grid-subcontent">
+									<span class="clock-grid-span">
+										<span id="line4-1" class="clock-grid-time"></span><br>
+										<span id="line4-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
+										<span id="line4-3" class="clock-grid-sous-titre">TUESDAY, MAY 07, 2013</span>
 									</span>
 								</div>
 							</div>
