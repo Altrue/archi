@@ -105,7 +105,9 @@
 			</table>
 			<a href="list.php"><div class="bottom-bar"><span>SWITCH TO LIST VIEW</span></div></a>
 	</body>
-
+	<footer>
+		<?php include ('../utilities/footer.php'); ?>
+	</footer>
 <?php
 
 ?>
