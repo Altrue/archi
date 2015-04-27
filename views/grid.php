@@ -1,11 +1,12 @@
 <!DOCTYPE html> 
 <html>
 	<header>
-		<link rel="stylesheet" type="text/css" href="../css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
 		<?php include ('utilities/header.php'); ?>
 	</header>
 	<body>
+		<!-- grid-->
 		<div id="main">
 			<div class="top-bar">
 				<table class="table-top-bar">
@@ -103,7 +104,7 @@
 					</td>
 				</tr>
 			</table>
-			<a href="list/list"><div class="bottom-bar"><span>SWITCH TO LIST VIEW</span></div></a>
+			<a href="list"><div class="bottom-bar"><span>SWITCH TO LIST VIEW</span></div></a>
 	</body>
 	<footer>
 		<?php include ('utilities/footer.php'); ?>

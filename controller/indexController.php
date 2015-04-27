@@ -23,7 +23,7 @@
 						$err = "errL";
 					}
 					else{
-						$this->redirect('list/list');
+						$this->redirect('list');
 					}
 				}
 				else{

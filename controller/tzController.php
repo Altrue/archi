@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	require_once('librairie/formulaire.php');
 	require_once('librairie/session.php');
 	require_once('helper/userDao.php');
@@ -19,7 +21,8 @@
 			$zone->findByUser($pdo, $user);
 			unset($pdo);
 			$view = new View('views/');
-			if($this->request->getParams('page') == 'grid'){
+			$tabServer = explode('/',$this->request->getServer('REQUEST_URI'));
+			if(in_array('grid', $tabServer)){
 				$view->load('grid.php');
 			}
 			else{

@@ -9,7 +9,7 @@
 		public function query($pdo,$request){
 			$pdostat = $pdo->query($request);
 			//var_dump($pdostat->columnCount());
-			if($pdostat->columnCount() == 0){
+			if($pdostat->rowCount() == 0){
 				$pdostat = null;
 			}
 			return $pdostat;
@@ -22,8 +22,8 @@
 		
 		//renvoi un outil pdostatement ou null si 0 résultat
 		public function findById($pdo, $id){
-			$pdostat = $pdo->query("SELECT * FROM ".$tableName." WHERE id = ".$id.";");
-			if($pdostat->columnCount() == 0){
+			$pdostat = $pdo->query("SELECT * FROM ".$this->tableName." WHERE id = ".$id.";");
+			if($pdostat->rowCount() == 0){
 				$pdostat = null;
 			}
 			$pdostat->closeCursor();
@@ -32,8 +32,8 @@
 		
 		//renvoi un outil pdostatement ou null si 0 résultat
 		public function findAll($pdo){
-			$pdostat = $pdo->query("SELECT * FROM ".$tableName.";");
-			if($pdostat->columnCount() != 0){
+			$pdostat = $pdo->query("SELECT * FROM ".$this->tableName.";");
+			if($pdostat->rowCount() != 0){
 				$pdostat = null;
 			}
 			$pdostat->closeCursor();
@@ -53,7 +53,7 @@
 			}
 			$keyRequest = substr($keyRequest, 1);
 			$valRequest = substr($valRequest, 1);
-			$pdo->exec("INSERT INTO ".$tableName." (".$keyRequest.") VALUES(".$valRequest.");");
+			$pdo->exec("INSERT INTO ".$this->tableName." (".$keyRequest.") VALUES(".$valRequest.");");
 		}
 		
 		//met à jour un enregistrement
@@ -67,11 +67,11 @@
 				$request = $request.$value;
 			}
 			$request = substr($request, 1);
-			$pdo->exec("UPDATE ".$tableName." SET ".$request." WHERE id = ".$id.";");
+			$pdo->exec("UPDATE ".$this->tableName." SET ".$request." WHERE id = ".$id.";");
 		}
 		
 		//supprime un enregistrement
 		public function delete($pdo, $id){
-			$pdo->exec("DELETE FROM ".$tableName." WHERE id = ".$id.";");
+			$pdo->exec("DELETE FROM ".$this->tableName." WHERE id = ".$id.";");
 		}
 	}

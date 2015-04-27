@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<header>
-		<link rel="stylesheet" type="text/css" href="../css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
 	<header>
 	<body>
+		<!-- add-->
 		<div id="main">
 			<div class="top-bar">
 				<table class="table-top-bar">

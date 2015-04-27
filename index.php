@@ -11,8 +11,8 @@
 	// L'url http://monsite.com/actualites/archives/2012/01/PHP sera redirigé vers
 	// actualitesController et sa méthode index(). Les paramètres annee, mois , catégorie seront passer au controller par le routeur.
 	//$router->addRule('actualites/archives/:annee/:mois/:categorie', array('controller' => 'actualites', 'action' => 'index'));
-	$router->addRule('list/:page', array('controller' => 'tzController', 'action' => 'indexAction'));
-	$router->addRule('grid/:page', array('controller' => 'tzController', 'action' => 'indexAction'));
-	$router->addRule('deco', array('controller' => 'indexController', 'action' => 'logoutAction'));
-	$router->addRule('add', array('controller' => 'tzController', 'action' => 'listAllTzAction'));
+	$router->addRule(':list', array('controller' => 'tzController', 'action' => 'indexAction'));
+	$router->addRule(':grid', array('controller' => 'tzController', 'action' => 'indexAction'));
+	$router->addRule(':deco', array('controller' => 'indexController', 'action' => 'logoutAction'));
+	$router->addRule(':add', array('controller' => 'tzController', 'action' => 'listAllTzAction'));
 	$router->load();

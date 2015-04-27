@@ -1,6 +1,4 @@
 <?php
-	session_start();
-
 	class request{
 		private $headers;
 		private $get;

@@ -120,7 +120,7 @@ class Router
         {
             foreach ($this->rules as $key => $data) {
                 $params = $this->matchRules($key, $tabUrl);
-                if ($params)
+                if ($params !== false)
                 {
                     $this->controller   = $data['controller'];
                     $this->action       = $data['action'];
@@ -180,28 +180,26 @@ class Router
      * Vérifie si l'url correspond à  une règle de routage
      * @link http://blog.sosedoff.com/2009/07/04/simpe-php-url-routing-controller/
      * @param string $rule
-     * @param array $dataItems
+     * @param array $dataItems (ici add)
      * @return boolean|array
      */
     public function matchRules($rule, $dataItems)
     {
         $ruleItems = explode('/', $rule);
         $this->clear_empty_value($ruleItems);
-
         if (count($ruleItems) == count($dataItems))
         {
             $result = array();
             foreach ($ruleItems as $rKey => $rValue) {
-                if ($rValue[0] == ':')
-                {
+                if ($rValue[0] == ':'){
                     $rValue = substr($rValue, 1); //Supprime les : de la clé
-                    $result[$rValue] = $dataItems[$rKey];
                 }
-                else
-                {
-                    if ($rValue != $dataItems[$rKey])
-                        return false;
-                }
+                
+				if ($rValue != $dataItems[$rKey])
+					return false;
+				else{
+					$result[$rValue] = $dataItems[$rKey];
+				}
             }
             if (!empty($result))
                 return $result;

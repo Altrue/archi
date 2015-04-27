@@ -1,11 +1,12 @@
 <!DOCTYPE html> 
 <html>
 	<header>
-		<link rel="stylesheet" type="text/css" href="../css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
 		<?php include ('utilities/header.php'); ?>
 	</header>
 	<body>
+		<!-- liste-->
 		<div id="main">
 			<div class="top-bar">
 				<table class="table-top-bar">
@@ -14,8 +15,6 @@
 			</div>
 			<?php
 			$x = 1;
-			
-			$liste = array('Africa/Abidjan','America/Chihuahua','America/Indiana/Winamac','Europe/Athens');
 			$count = count($liste);
 			$tabColor = array('orange1', 'orange2', 'orange3', 'violet1', 'violet2', 'violet3');
 			foreach($liste as $timeZone){
@@ -33,7 +32,7 @@
 				$x++;
 			}
 			?>
-			<a href="grid/grid"><div id="bottom-link" data-count="<?php echo $count;?>" class="bottom-bar"><span>SWITCH TO GRID VIEW</span></div></a>
+			<a href="grid"><div id="bottom-link" data-count="<?php echo $count;?>" class="bottom-bar"><span>SWITCH TO GRID VIEW</span></div></a>
 	</body>
 	<footer>
 		<?php include ('utilities/footer.php'); ?>
