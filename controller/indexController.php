@@ -4,7 +4,9 @@
 	require_once('../librairie/connectDBClass.php');
 	require_once('../librairie/ControllerInterface.php');
 	
-	class indexController extends controller implements ControllerInterface{
+	class indexController extends Controller implements ControllerInterface{
+		
+		public function indexAction(){}
 		
 		public function loginAction(){
 			if(isset($_POST['connexion'])){
@@ -15,6 +17,7 @@
 					$session = new session($formConnexion->selectInputValue('login'));
 					$c = $session->connectUtilisateur($formConnexion->selectInputValue('mdp'));
 					if($c != 1){
+					
 						echo "login ou mot de passe incorrect";
 					}
 					else{
@@ -24,6 +27,10 @@
 				else{
 					echo "erreur de saisie";
 				}
+				//redirection vers index.php
+			}
+			else{
+				//redirection vers index.php ou error
 			}
 		}
 		
@@ -31,6 +38,7 @@
 			if(isset($_SESSION['user'])){
 				unset($_SESSION['user']);
 				session_destroy();
+				//redirection vers index.php
 			}
 		}
 	}

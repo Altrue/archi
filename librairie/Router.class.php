@@ -89,24 +89,6 @@ class Router
      * @var string
      */
     private $errorAction;
-	
-	/**
-	 * Le router gère t'il les url du type site.com/fr/controller/action
-	 * @var boolean 
-	 */
-	private $isMultiLangue	= false;
-	
-	/**
-	 * Code langue choisie
-	 * @var string 
-	 */
-	private $codeLangue		= '';
-	
-    /**
-     *Liste des traductions pour les url multilingues
-     * @var array 
-     */
-	private $tradController;
 
     /**
      * Singleton de la classe
@@ -170,10 +152,7 @@ class Router
         include $this->file;
 
         $class      = $this->controller . 'Controller';
-		if(!empty($this->codeLangue))
-			$controller = new $class($this->getParameters(),$this->codeLangue);
-		else
-			$controller = new $class($this->getParameters());
+		$controller = new $class($this->getParameters());
 
         if (!is_callable(array($controller, $this->action)))
             $action = $this->defaultAction;
@@ -241,10 +220,7 @@ class Router
         $items = $url;
 
         if (!empty($items))
-        {
-            if($this->isMultiLangue)
-				$this->codeLangue = array_shift ($items);
-			
+        {	
 			$this->controller   = array_shift($items);
             $this->action       = array_shift($items);
 			$size = count($items);
@@ -256,24 +232,6 @@ class Router
 				}
 			else
 				$this->params = $items;
-			
-			//Permet d'avoir des URL multilingue
-			if(!empty($this->tradController))
-			{
-				if(isset($this->tradController[$this->codeLangue][$this->controller]['controllerName']))
-				{
-					$controller = $this->tradController[$this->codeLangue][$this->controller]['controllerName'];
-					if(!empty($controller))
-						$this->controller = $controller;
-				}
-				
-				if(isset($this->tradController[$this->codeLangue][$this->controller]['actionsNames'][$this->action]))
-				{
-					$action = $this->tradController[$this->codeLangue][$this->controller]['actionsNames'][$this->action];
-					if(!empty($action))
-						$this->action = $action;
-				}
-			}
         }
     }
 	
@@ -281,8 +239,7 @@ class Router
      * Défini le chemin des controllers
      * @param string $path
      */
-    public function setPath($path)
-    {
+    public function setPath($path){
         if (is_dir($path) === false)
         {
             throw new Util_Exception('Controller invalide : ' . $path);
@@ -291,45 +248,12 @@ class Router
         $this->path = $path;
     }
 	
-	/**
-	 * Défini le router comme pouvant gérer ou non le multinlangue
-	 * @param boolean $is 
-	 */
-	public function setMultiLangue($is)
-	{
-		$this->isMultiLangue = $is;
-	}
-	
-	/**
-	 * Défini un tableau permettant d'avoir des URL multi langue.
-	 * Format du tableau : 
-	 * 
-	 * @param array $trad format : 
-	 * $urlTraduction = array(
-		'fr'=>array(
-			'accueil'=>array(
-				'controllerName'	=> 'index',
-				'actionsNames'		=> array(
-					'presentation'	=> 'index',
-					'liste'			=> 'list',
-					'recherche'		=> 'search'
-				)
-			)
-		),
-		'en'=>array(...));
-	 */
-	public function setControllerTraduction($trad)
-	{
-		$this->tradController = $trad;
-	}
-	
     /**
      * Défini le controller et l'action par défaut
      * @param string $controller
      * @param string $action
      */
-    public function setDefaultControllerAction($controller, $action)
-    {
+    public function setDefaultControllerAction($controller, $action){
         $this->defaultController    = $controller;
         $this->defaultAction        = $action;
     }
@@ -339,8 +263,7 @@ class Router
      * @param string $controler
      * @param string $action
      */
-    public function setErrorControllerAction($controller, $action)
-    {
+    public function setErrorControllerAction($controller, $action){
         $this->errorController  = $controller;
         $this->errorAction      = $action;
     }
@@ -349,8 +272,7 @@ class Router
      * Renvoi les paramètres disponibles
      * @return array
      */
-    public function getParameters()
-    {
+    public function getParameters(){
         return $this->params;
     }
 	
@@ -358,8 +280,7 @@ class Router
      * Supprime d'un tableau tous les élements vide
      * @param array $array
      */
-    private function clear_empty_value(&$array)
-    {
+    private function clear_empty_value(&$array){
         foreach ($array as $key => $value) {
             if (empty($value))
                 unset($array[$key]);
@@ -372,8 +293,7 @@ class Router
      * @param string $url
      * @return string
      */
-    private function formatUrl($url, $script)
-    {
+    private function formatUrl($url, $script){
         $tabUrl     = explode('/', $url);
         $tabScript  = explode('/', $script);
         $size       = count($tabScript);
@@ -388,8 +308,7 @@ class Router
     /**
      * Constructeur
      */
-    private function __construct()
-    {
+    private function __construct(){
         $this->rules = array();
         $this->defaultController    = 'index';
         $this->defaultAction        = 'index';

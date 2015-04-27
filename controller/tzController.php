@@ -1,12 +1,13 @@
 <?php
-	require_once('/librairie/formulaire.php');
-	require_once('/librairie/session.php');
-	require_once('/helper/userDao.php');
-	require_once('/helper/tzDao.php');
+	require_once('../librairie/formulaire.php');
+	require_once('../librairie/session.php');
+	require_once('../helper/userDao.php');
+	require_once('../helper/tzDao.php');
+	require_once('../librairie/ControllerInterface.php');
 	
-	class tzController {
-	
-		private $view;
+	class tzController extends Controller implements ControllerInterface{
+		
+		public function indexAction(){}
 		
 		//ajoute une timezone
 		public function addTzAction($tzId){

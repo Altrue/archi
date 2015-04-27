@@ -1,5 +1,5 @@
 <?php
-	abstract class controller{
+	abstract class Controller{
 		/**
 		* Objet de vue
 		* @var mixed
