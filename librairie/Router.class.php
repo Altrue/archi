@@ -94,7 +94,7 @@ class Router
      * Singleton de la classe
      * @return Router
      */
-    public function getInstance()
+    public static function getInstance()
     {
         if (!isset(self::$instance))
             self::$instance = new Router();
@@ -151,7 +151,7 @@ class Router
         //Inclusion du controller
         include $this->file;
 
-        $class      = $this->controller . 'Controller';
+        $class      = $this->controller;
 		$controller = new $class($this->getParameters());
 
         if (!is_callable(array($controller, $this->action)))

@@ -1,18 +1,20 @@
 <?php
 	class request{
-		protected $headers;
-		protected $get;
-		protected $post;
-		protected $cookie;
-		protected $request;
-		protected $file;
-		protected $defaultMethod = 'post';
-		public function __construct(){
+		private $headers;
+		private $get;
+		private $post;
+		private $cookie;
+		private $request;
+		private $param;
+		private $file;
+		private $defaultMethod = 'post';
+		public function __construct($params){
 			$this->get = $_GET;
 			$this->post = $_POST;
 			$this->cookie = $_COOKIE;
 			$this->file = $_FILES;
 			$this->request = $_REQUEST;
+			$this->param = $params;
 		}
 		/**
 		* Réinitialise l'objet request
@@ -25,6 +27,7 @@
 			$this->file = $_FILES;
 			$this->request = $_REQUEST;
 			$this->headers = null;
+			$this->param = null;
 		}
 		/**
 		* Récupère une variable $_SERVER
@@ -48,6 +51,14 @@
 			throw new \InvalidArgumentException('Type de paramètre invalide');
 			return (isset($this->{$type}[$name])) ? $this->{$type}[$name] : null;
 		}
+		//récupère un paramètre de param
+		public function getParams($name){
+		$retour = null;
+			if(isset($this->post[$name])){
+				$retour = $this->param[$name];
+			}
+			return $retour;	
+		}
 		/**
 		* Récupère une valeur POST
 		* @param string $name Nom de la valeur POST
@@ -57,7 +68,11 @@
 		* @return mixed
 		*/
 		public function getPost($name){
-			return $this->post[$name];
+			$retour = null;
+			if(isset($this->post[$name])){
+				$retour = $this->post[$name];
+			}
+			return $retour;
 		}
 		/**
 		* Récupère une valeur GET
@@ -67,7 +82,11 @@
 		* @return mixed
 		*/
 		public function get($name){
-			return $this->get[$name];
+			$retour = null;
+			if(isset($this->post[$name])){
+				$retour = $this->get[$name];
+			}
+			return $retour;
 		}
 		/**
 		* Récupère une variable d'environnement

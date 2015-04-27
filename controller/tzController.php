@@ -13,8 +13,8 @@
 			$user = $userDAO->findUserByLog($_SESSION['loginUser']);
 			$zone = new zoneUserDao();
 			$zone->findByUser($user);
-			$view = new view('../views/');
-			if($this->request->get('page') == 'grid'){
+			$view = new View('views/');
+			if($this->request->getParams('page') == 'grid'){
 				$view->load('grid.php');
 			}
 			else{
@@ -26,30 +26,30 @@
 		
 		//ajoute une timezone
 		public function addTzAction(){
-			$tzDAO = tzDao::getInstance();
+			$tzDAO = new tzDao();
 			$tz = $tzDAO->findTzById($this->request->getPost('tzId'));
-			$userDAO = userDao::getInstance();
+			$userDAO = new userDao();
 			$user = $userDAO->findUserByLog($_SESSION['loginUser']);
-			$zone = zoneUserDao::getInstance();
+			$zone = new zoneUserDao();
 			$zone->findByUser($user);
 			$zone->insertZone($user, $tz);
 		}
 		
 		//supprime une timezone
 		public function deleteTzAction(){
-			$tzDAO = tzDao::getInstance();
+			$tzDAO = new tzDao();
 			$tz = $tzDAO->findTzById($this->request->getPost('tzId'));
-			$userDAO = userDao::getInstance();
+			$userDAO = new userDao();
 			$user = $userDAO->findUserByLog($_SESSION['loginUser']);
-			$zone = zoneUserDao::getInstance();
+			$zone = new zoneUserDao();
 			$zone->findByUser($user);
 			$zone->deleteZone($user, $tz);
 		}
 		
 		//liste toutes les timezones sélectionnable
 		public function listAllTzAction(){
-			$tzDAO = tzDao::getInstance();
-			$view = new view('../views/');
+			$tzDAO = new tzDao();
+			$view = new View('views/');
 			$view->load('add.php');
 			$view->set('liste',$tzDAO->findAllTz());
 			$view->render();

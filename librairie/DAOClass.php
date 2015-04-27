@@ -1,5 +1,5 @@
 <?php
-	require_once('../librairie/connectDBClass.php');
+	require_once('librairie/connectDBClass.php');
 
 	abstract class DAOClass {
 	
