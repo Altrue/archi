@@ -13,14 +13,18 @@
 				</table>
 			</div>
 			<?php
-			$x = 0;
+			$x = 1;
+			
+			$liste = array('Africa/Abidjan','America/Chihuahua','America/Indiana/Winamac','Europe/Athens');
+			$count = count($liste);
 			$tabColor = array('orange1', 'orange2', 'orange3', 'violet1', 'violet2', 'violet3');
 			foreach($liste as $timeZone){
-				list($p, $v) = explode('/', $timeZone->getLibelle());
+				$tzLibelle = $timeZone->getLibelle();
+				list($p, $v) = explode('/', $tzLibelle);
 				?>
 				<div class="clock-line <?php echo $tabColor[$x%6]; ?>">
 					<div class="clock-line-content">
-						<span id="line<?php echo $x;?>-1" data-utc="<?php echo $timeZone->getGtm();?>" class="clock-line-time"></span><br>
+						<span id="line<?php echo $x;?>-1" data-tzlibelle="<?php echo $tzLibelle;?>" class="clock-line-time"></span><br>
 						<span id="line<?php echo $x;?>-2" class="clock-line-titre"><b> <?php echo $p;?></b> <?php echo $v;?></span><br>
 						<span id="line<?php echo $x;?>-3" class="clock-line-sous-titre"></span>
 					</div>
@@ -29,9 +33,11 @@
 				$x++;
 			}
 			?>
-			<a href="grid.php"><div class="bottom-bar"><span>SWITCH TO GRID VIEW</span></div></a>
+			<a href="grid.php"><div id="bottom-link" data-count="<?php echo $count;?>" class="bottom-bar"><span>SWITCH TO GRID VIEW</span></div></a>
 	</body>
-
+	<footer>
+		<?php include ('../utilities/footer.php'); ?>
+	</footer>
 <?php
 
 ?>

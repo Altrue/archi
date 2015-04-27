@@ -43,4 +43,7 @@
 			<div class="bottom-bar-login"><span>Veuillez vous connecter pour continuer</span></div>
 		</div>
 	</body>
+	<footer>
+		<?php include ('../utilities/footer.php'); ?>
+	</footer>
 </html>
