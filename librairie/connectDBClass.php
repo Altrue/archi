@@ -5,7 +5,7 @@
 		//méthodes
 		//constructeur
 		public function __construct(){
-			$myIniFile = parse_ini_file ("../config/config.ini",TRUE);
+			$myIniFile = parse_ini_file ("config/config.ini",TRUE);
 			$this->pdoInstance = new PDO('mysql:host='.$myIniFile['host'].';dbname='.$myIniFile['base'],$myIniFile['user'],$myIniFile['password']);
 		}
 		//connexion à une base

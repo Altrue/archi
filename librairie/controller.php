@@ -1,4 +1,7 @@
 <?php
+	require_once('librairie/request.php');
+	require_once('librairie/view.php');
+
 	abstract class Controller{
 		/**
 		* Objet de vue
@@ -16,14 +19,14 @@
 		* @param string $codeLangue Code langue. par défaut défini à fr
 		*/
 		public function __construct($requete){
-			$this->request = $requete;
+			$this->request = new request($requete);
 		}
 		/**
 		* Redirection
 		* @param string $url
 		*/
 		public function redirect($url){
-			header('Location: /' . $url);
+			header('Location: ' . $url);
 			exit;
 		}
 		public function setView($view){

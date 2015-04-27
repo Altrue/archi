@@ -1,5 +1,6 @@
 <?php
-	require_once('../librairie/ControllerInterface.php');
+	require_once('librairie/ControllerInterface.php');
+	require_once('librairie/Controller.php');
 	
 	class errorController extends Controller implements ControllerInterface{
 		

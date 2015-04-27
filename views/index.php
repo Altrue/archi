@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
 	<header>
-		<link rel="stylesheet" type="text/css" href="../css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
-		<?php include ('../utilities/header.php'); ?>
+		<?php include ('utilities/header.php'); ?>
 	</header>
 	<body>
 		<div id="main">
