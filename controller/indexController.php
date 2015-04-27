@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	require_once('librairie/formulaire.php');
 	require_once('librairie/session.php');
 	require_once('librairie/Controller.php');
