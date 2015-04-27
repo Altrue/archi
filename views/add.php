@@ -101,10 +101,10 @@
 					</tr>
 				</table>
 			</div>
-		<a href="list.php"><div class="bottom-bar bottom-bar-add"><span>Double-cliquez sur une coche pour valider</span></div></a>
+		<a href="list/list"><div class="bottom-bar bottom-bar-add"><span>Double-cliquez sur une coche pour valider</span></div></a>
 	</body>
 	<footer>
-		<?php include ('../utilities/footer.php'); ?>
+		<?php include ('utilities/footer.php'); ?>
 	</footer>
 <?php
 

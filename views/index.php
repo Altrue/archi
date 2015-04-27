@@ -41,6 +41,6 @@
 		</div>
 	</body>
 	<footer>
-		<?php include ('../utilities/footer.php'); ?>
+		<?php include ('utilities/footer.php'); ?>
 	</footer>
 </html>

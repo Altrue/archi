@@ -14,4 +14,5 @@
 	$router->addRule('list/:page', array('controller' => 'tzController', 'action' => 'indexAction'));
 	$router->addRule('grid/:page', array('controller' => 'tzController', 'action' => 'indexAction'));
 	$router->addRule('deco', array('controller' => 'indexController', 'action' => 'logoutAction'));
+	$router->addRule('add', array('controller' => 'tzController', 'action' => 'listAllTzAction'));
 	$router->load();

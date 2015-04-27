@@ -9,7 +9,7 @@
 		<div id="main">
 			<div class="top-bar">
 				<table class="table-top-bar">
-					<tr><td class="td-refresh"><a href=""><div class="td-refresh-div"></div></a></td><td class="td-logo"></td><td class="td-plus"><a href="add.php"><div class="td-plus-div"></div></a></td></tr>
+					<tr><td class="td-refresh"><a href=""><div class="td-refresh-div"></div></a></td><td class="td-logo"></td><td class="td-plus"><a href="add"><div class="td-plus-div"></div></a></td></tr>
 				</table>
 			</div>
 			<?php
@@ -33,10 +33,10 @@
 				$x++;
 			}
 			?>
-			<a href="grid.php"><div id="bottom-link" data-count="<?php echo $count;?>" class="bottom-bar"><span>SWITCH TO GRID VIEW</span></div></a>
+			<a href="grid/grid"><div id="bottom-link" data-count="<?php echo $count;?>" class="bottom-bar"><span>SWITCH TO GRID VIEW</span></div></a>
 	</body>
 	<footer>
-		<?php include ('../utilities/footer.php'); ?>
+		<?php include ('utilities/footer.php'); ?>
 	</footer>
 <?php
 

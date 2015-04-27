@@ -9,7 +9,7 @@
 		<div id="main">
 			<div class="top-bar">
 				<table class="table-top-bar">
-					<tr><td class="td-refresh"><a href=""><div class="td-refresh-div"></div></a></td><td class="td-logo"></td><td class="td-plus"><a href="add.php"><div class="td-plus-div"></div></a></td></tr>
+					<tr><td class="td-refresh"><a href=""><div class="td-refresh-div"></div></a></td><td class="td-logo"></td><td class="td-plus"><a href="add"><div class="td-plus-div"></div></a></td></tr>
 				</table>
 			</div>
 			<table style="border-collapse:collapse;" cellspacing="0" cellpadding="0">
@@ -103,10 +103,10 @@
 					</td>
 				</tr>
 			</table>
-			<a href="list.php"><div class="bottom-bar"><span>SWITCH TO LIST VIEW</span></div></a>
+			<a href="list/list"><div class="bottom-bar"><span>SWITCH TO LIST VIEW</span></div></a>
 	</body>
 	<footer>
-		<?php include ('../utilities/footer.php'); ?>
+		<?php include ('utilities/footer.php'); ?>
 	</footer>
 <?php
 
