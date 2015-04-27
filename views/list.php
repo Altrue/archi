@@ -19,8 +19,7 @@
 			<?php
 			$x = 0;
 			$tabColor = array('orange1', 'orange2', 'orange3', 'violet1', 'violet2', 'violet3');
-			$collec = mainController::selectTzAction();
-			foreach($collec as $timeZone){
+			foreach($liste as $timeZone){
 				list($p, $v) = explode('/', $timeZone->getLibelle());
 				?>
 				<div class="clock-line <?php echo $tabColor[$x%6]; ?>">

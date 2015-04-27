@@ -14,7 +14,7 @@
 			$tz = null;
 			$pdostat = $this->findById($pdo, $id);
 			if($pdostat != null){
-				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'timeZone', array('id','libelle','gtm'));
+				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'timeZone', array('id','libelle'));
 				$tz = $pdostat->fetch();
 				$pdostat->closeCursor();
 			}
@@ -26,7 +26,7 @@
 			$tabTz = null;
 			$pdostat = $this->findAll($pdo);
 			if($pdostat != null){
-				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'timeZone', array('id','libelle','gtm'));
+				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'timeZone', array('id','libelle'));
 				while($tz = $pdostat->fetch()){
 					$tabTz[] = $tz;
 				}
@@ -39,7 +39,6 @@
 		public function insertTz($pdo, $tz){
 			$fields = array(
 				'libelle' => $tz->getLibelle(),
-				'gtm' => $tz->getGtm()
 			);
 			$this->insert($pdo, $fields);
 		}

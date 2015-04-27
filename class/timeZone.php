@@ -4,14 +4,12 @@
 		//attr
 		private $id;
 		private $libelle;
-		private $gtm;
 		
 		//méthodes
 		//constructeur
-		public function __construct($id, $libelle, $gtm){
+		public function __construct($id, $libelle){
 			$this->id = $id;
 			$this->libelle = $libelle;
-			$this->gtm = $gtm;
 		}
 		
 		//get
@@ -20,9 +18,6 @@
 		}
 		public function getId(){
 			return $this->id;
-		}
-		public function getGtm(){
-			return $this->gtm;
 		}
 		
 	}

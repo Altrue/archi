@@ -37,7 +37,8 @@
 			return $retour;
 		}
 		public function changerMdp($mdp){
-			$pdo = connectDB::getInstance();
+			$connect = new connectBase();
+			$pdo = $connect->connectBase();
 			$pdo->exec("UPDATE USER SET mdpUser = ".$pdo->quote($mdp)." WHERE loginUser = ".$pdo->quote($this->loginUser).";");
 			unset($pdo);
 		}

@@ -6,39 +6,40 @@
 	
 	class indexController extends Controller implements ControllerInterface{
 		
-		public function indexAction(){}
-		
-		public function loginAction(){
-			if(isset($_POST['connexion'])){
+		public function indexAction(){
+			$err = null;
+			if(isset($this->request->getPost('connexion'))){
 				$formConnexion = new formulaire('connexion','POST');
-				$formConnexion->addInput(new input('login','text',$_POST['login'],null,100,true));
-				$formConnexion->addInput(new input('mdp','password',$_POST['mdp'],null,null,true));
+				$formConnexion->addInput(new input('login','text',$this->request->getPost('login'),null,100,true));
+				$formConnexion->addInput(new input('mdp','password',$this->request->getPost('mdp'),null,null,true));
 				if($formConnexion->isValid()){
 					$session = new session($formConnexion->selectInputValue('login'));
 					$c = $session->connectUtilisateur($formConnexion->selectInputValue('mdp'));
 					if($c != 1){
-					
-						echo "login ou mot de passe incorrect";
+						$err = "errL";
 					}
 					else{
-						//connecté
+						$this->redirect('list');
 					}
 				}
 				else{
-					echo "erreur de saisie";
+					$err = "errS";
 				}
-				//redirection vers index.php
 			}
-			else{
-				//redirection vers index.php ou error
-			}
+			$view = new view('../views/');
+			$view->load('index.php');
+			$view->set('message',$err);
+			$view->render();
 		}
 		
 		public function logoutAction(){
 			if(isset($_SESSION['user'])){
 				unset($_SESSION['user']);
 				session_destroy();
-				//redirection vers index.php
+				$view = new view('../views/');
+				$view->load('index.php');
+				$view->set('message','deco');
+				$view->render();
 			}
 		}
 	}

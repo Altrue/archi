@@ -21,3 +21,9 @@
 + 1 Développement à l'instinct
 + 2 Refactoring
 + 3 "Frameworkisation" de l'application
+
+url :
+	-/connexion
+	-/list
+	-/grid
+	-/all
