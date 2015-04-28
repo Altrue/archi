@@ -14,97 +14,55 @@
 				</table>
 			</div>
 			<table style="border-collapse:collapse;" cellspacing="0" cellpadding="0">
-				<tr>
-					<td class="td-clock-grid">
-						<div class="clock-grid orange1">
-							<div class="clock-grid-content">
-								<div class="clock-grid-subcontent">
-									<span class="clock-grid-span">
-										<span id="line1-1" class="clock-grid-time" data-utc="2"></span><br>
-										<span id="line1-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
-										<span id="line1-3" class="clock-grid-sous-titre"></span>
-									</span>
-								</div>
+				<?php
+			$x = 1;
+			$count = $liste->getCount();
+			$tabColor = array('orange1', 'orange2', 'orange3', 'violet1', 'violet2', 'violet3');
+			$newLine = true;
+			foreach($liste->getListObjet() as $timeZone){
+				$tzLibelle = $timeZone->getLibelle();
+				$explodedTz = array();
+				$explodedTz = explode('/', $tzLibelle);
+				if (!isset($explodedTz[1])) {
+					$explodedTz[1] = "";
+				}
+				if (isset($explodedTz[2])) {
+					$explodedTz[1] = $explodedTz[2];
+				}
+				$explodedTz[1] = str_replace("_", " ", $explodedTz[1]);
+				if ($newLine) {echo"<tr>";}
+				?>
+				<td class="td-clock-grid">
+					<div class="clock-grid <?php echo $tabColor[$x%6]; ?>">
+						<div class="clock-grid-content">
+							<div class="clock-grid-subcontent">
+								<span class="clock-grid-span">
+									<span id="line<?php echo $x;?>-1" data-tzlibelle="<?php echo $tzLibelle;?>" class="clock-grid-time" data-utc="-8.5"></span><br>
+									<span id="line<?php echo $x;?>-2" class="clock-grid-titre"><b> <?php echo $explodedTz[0];?></b> <?php echo $explodedTz[1];?></span><br>
+									<span id="line<?php echo $x;?>-3" class="clock-grid-sous-titre"></span>
+								</span>
 							</div>
 						</div>
-					</td>
-					<td class="td-clock-grid">
-						<div class="clock-grid orange2">
-							<div class="clock-grid-content">
-								<div class="clock-grid-subcontent">
-									<span class="clock-grid-span">
-										<span id="line2-1" class="clock-grid-time" data-utc="1"></span><br>
-										<span id="line2-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
-										<span id="line2-3" class="clock-grid-sous-titre"></span>
-									</span>
-								</div>
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td class="td-clock-grid">
-						<div class="clock-grid orange3">
-							<div class="clock-grid-content">
-								<div class="clock-grid-subcontent">
-									<span class="clock-grid-span">
-										<span id="line3-1" class="clock-grid-time" data-utc="0"></span><br>
-										<span id="line3-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
-										<span id="line3-3" class="clock-grid-sous-titre"></span>
-									</span>
-								</div>
-							</div>
-						</div>
-					</td>
-					<td class="td-clock-grid">
-						<div class="clock-grid violet1">
-							<div class="clock-grid-content">
-								<div class="clock-grid-subcontent">
-									<span class="clock-grid-span">
-										<span id="line4-1" class="clock-grid-time" data-utc="-2"></span><br>
-										<span id="line4-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
-										<span id="line4-3" class="clock-grid-sous-titre"></span>
-									</span>
-								</div>
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td class="td-clock-grid">
-						<div class="clock-grid violet2">
-							<div class="clock-grid-content">
-								<div class="clock-grid-subcontent">
-									<span class="clock-grid-span">
-										<span id="line5-1" class="clock-grid-time" data-utc="-8.5"></span><br>
-										<span id="line5-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
-										<span id="line5-3" class="clock-grid-sous-titre"></span>
-									</span>
-								</div>
-							</div>
-						</div>
-					</td>
-					<td class="td-clock-grid">
-						<div class="clock-grid violet3">
-							<div class="clock-grid-content">
-								<div class="clock-grid-subcontent">
-									<span class="clock-grid-span">
-										<span id="line6-1" class="clock-grid-time" data-utc="8.5"></span><br>
-										<span id="line6-2" class="clock-grid-titre"><b>PARIS</b> FRANCE</span><br>
-										<span id="line6-3" class="clock-grid-sous-titre"></span>
-									</span>
-								</div>
-							</div>
-						</div>
-					</td>
-				</tr>
+					</div>
+				</td>
+				<?php
+				if ($newLine == false || $x >= $count) {echo"</tr>";} // La deuxième condition permet de fermer la ligne même si le count est impair.
+				
+				$x++;
+				if ($newLine) {$newLine = false;}
+				else {$newLine = true;}
+			}
+			if ($count == 0) {
+				echo "<div class='error_empty'>Aucune Timezone enregistrée. Cliquez sur <b>+</b> pour commencer !</div>";
+			}
+			?>
 				<tr class="invisible-tr">
 					<td>
 						<image class="clock-square" src="../images/1x1.png"/>
 					</td>
 				</tr>
 			</table>
-			<a href="list"><div class="bottom-bar"><span>SWITCH TO LIST VIEW</span></div></a>
+			<a href="list"><div id="bottom-link" data-count="<?php echo $count;?>" class="bottom-bar"><span>SWITCH TO LIST VIEW</span></div></a>
 	</body>
 	<footer>
 		<?php include ('utilities/footer.php'); ?>

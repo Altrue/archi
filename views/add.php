@@ -16,13 +16,22 @@
 			<?php
 			$x = 1;
 			foreach($liste as $timeZone){
+				$explodedTz = array();
+				$explodedTz = explode('/', $timeZone->getLibelle());
+				if (!isset($explodedTz[1])) {
+					$explodedTz[1] = "";
+				}
+				if (isset($explodedTz[2])) {
+					$explodedTz[1] = $explodedTz[2];
+				}
+				$explodedTz[1] = str_replace("_", " ", $explodedTz[1]);
 				?>
 				<div class="search-line nightblue<?php echo $x%2 + 1;?>">
 					<table class="table-top-bar">
 						<tr>
 							<td class="td-search-text">
 								<div class="search-line-content">
-									<span class="search-line-titre"><b><?php echo $timeZone->getLibelle();?></span><br>
+									<span class="search-line-titre"><b><?php echo $explodedTz[0];?></b> <?php echo $explodedTz[1];?></span><br>
 								</div>
 							</td>
 							<td class="td-search-check-icon">
