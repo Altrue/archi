@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
 	<header>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
@@ -13,7 +13,7 @@
 				</table>
 			</div>
 			<?php
-				if($message == 'deco'){echo 'Vous avez été déconnecté';}
+				if($message == 'deco'){echo 'Vous avez Ã©tÃ© dÃ©connectÃ©';}
 			?>
 			<div class="login-line nightblue1">
 				<table class="table-top-bar">

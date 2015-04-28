@@ -14,7 +14,7 @@
 			$tz = null;
 			$pdostat = $this->findById($pdo, $id);
 			if($pdostat != null){
-				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'TimeZone', array('id','libelle'));
+				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'TimeZone');
 				$tz = $pdostat->fetch();
 				$pdostat->closeCursor();
 			}
@@ -26,7 +26,7 @@
 			$tabTz = null;
 			$pdostat = $this->findAll($pdo);
 			if($pdostat != null){
-				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'TimeZone', array('id','libelle'));
+				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'TimeZone');
 				while($tz = $pdostat->fetch()){
 					$tabTz[] = $tz;
 				}

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<header>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
@@ -12,97 +12,30 @@
 					<tr><td class="td-search-title">SEARCH LOCATION</td><td class="td-search-icon"><div class="td-search-div"></div></td></tr>
 				</table>
 			</div>
-			<div class="search-line nightblue1">
-				<table class="table-top-bar">
-					<tr>
-						<td class="td-search-text">
-							<div class="search-line-content">
-								<span class="search-line-titre"><b>NEW YORK</b> USA</span><br>
-								<span class="search-line-sous-titre">TUESDAY, MAY 07, 2013</span>
-							</div>
-						</td>
-						<td class="td-search-check-icon">
-							<input type="checkbox" id="check0" onclick="addOrDelete(0);" />
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="search-line nightblue2">
-				<table class="table-top-bar">
-					<tr>
-						<td class="td-search-text">
-							<div class="search-line-content">
-								<span class="search-line-titre"><b>NEW YORK</b> USA</span><br>
-								<span class="search-line-sous-titre">TUESDAY, MAY 07, 2013</span>
-							</div>
-						</td>
-						<td class="td-search-check-icon">
-							<div class="search-check-icon"></div>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="search-line nightblue1">
-				<table class="table-top-bar">
-					<tr>
-						<td class="td-search-text">
-							<div class="search-line-content">
-								<span class="search-line-titre"><b>NEW YORK</b> USA</span><br>
-								<span class="search-line-sous-titre">TUESDAY, MAY 07, 2013</span>
-							</div>
-						</td>
-						<td class="td-search-check-icon">
-							<div class="search-check-icon"></div>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="search-line nightblue2">
-				<table class="table-top-bar">
-					<tr>
-						<td class="td-search-text">
-							<div class="search-line-content">
-								<span class="search-line-titre"><b>NEW YORK</b> USA</span><br>
-								<span class="search-line-sous-titre">TUESDAY, MAY 07, 2013</span>
-							</div>
-						</td>
-						<td class="td-search-check-icon">
-							<div class="search-check-icon"></div>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="search-line nightblue1">
-				<table class="table-top-bar">
-					<tr>
-						<td class="td-search-text">
-							<div class="search-line-content">
-								<span class="search-line-titre"><b>NEW YORK</b> USA</span><br>
-								<span class="search-line-sous-titre">TUESDAY, MAY 07, 2013</span>
-							</div>
-						</td>
-						<td class="td-search-check-icon">
-							<div class="search-check-icon"></div>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="search-line nightblue2">
-				<table class="table-top-bar">
-					<tr>
-						<td class="td-search-text">
-							<div class="search-line-content">
-								<span class="search-line-titre"><b>NEW YORK</b> USA</span><br>
-								<span class="search-line-sous-titre">TUESDAY, MAY 07, 2013</span>
-							</div>
-						</td>
-						<td class="td-search-check-icon">
-							<div class="search-check-icon"></div>
-						</td>
-					</tr>
-				</table>
-			</div>
-		<a href="list"><div class="bottom-bar bottom-bar-add"><span>Double-cliquez sur une coche pour valider</span></div></a>
+			<a href="list"><div class="bottom-bar bottom-bar-add"><span>Retour à la liste</span></div></a>
+			<?php
+			$x = 1;
+			foreach($liste as $timeZone){
+				?>
+				<div class="search-line nightblue<?php echo $x%2 + 1;?>">
+					<table class="table-top-bar">
+						<tr>
+							<td class="td-search-text">
+								<div class="search-line-content">
+									<span class="search-line-titre"><b><?php echo $timeZone->getLibelle();?></span><br>
+								</div>
+							</td>
+							<td class="td-search-check-icon">
+								<input type="checkbox" id="check<?php echo $timeZone->getId();?>" onclick="addOrDelete(<?php echo $timeZone->getId();?>);" />
+							</td>
+						</tr>
+					</table>
+				</div>
+				<?php
+				$x++;
+			}
+			?>
+		<a href="list"><div class="bottom-bar bottom-bar-add"><span>Retour à la liste</span></div></a>
 	</body>
 	<footer>
 		<?php include ('utilities/footer.php'); ?>

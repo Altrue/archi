@@ -31,7 +31,7 @@
 		//renvoi un outil pdostatement ou null si 0 résultat
 		public function findAll($pdo){
 			$pdostat = $pdo->query("SELECT * FROM ".$this->tableName.";");
-			if($pdostat->rowCount() != 0){
+			if($pdostat->rowCount() == 0){
 				$pdostat = null;
 			}
 			return $pdostat;
