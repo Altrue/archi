@@ -43,7 +43,7 @@ $(document).ready(function(){
 			s = "0"+s;
 			}
 			var id_heure = "line"+line+"-1";
-			resultat_heure = h+':'+m;
+			resultat_heure = h+'<a style="color: #fff;" class="deuxpoints">:</a>'+m;
 			document.getElementById(id_heure).innerHTML = resultat_heure;
 			
 			var id_date = "line"+line+"-3";
@@ -60,12 +60,20 @@ $(document).ready(function(){
 			time($("#line"+currentCount+"-1").attr('data-tzlibelle'),currentCount);
 			currentCount = currentCount + 1;
 		}
+		if (x < 1) {
+			$( ".deuxpoints" ).css( "opacity", "0" );
+			x = 1;
+		}
+		else {
+			$( ".deuxpoints" ).css( "opacity", "1" );
+			x = 0;
+		}
 	}
+	
+	var x = 0;
 	
 	/* Appelé une fois au lancement, car sinon durant la première seconde, la page n'est pas prête. */
 	refreshTime();
-	
-	var x = 0;
 	
 	/* Dans cette fonction, le code est appellé toutes les 1000ms (1 seconde) */
 	setInterval(function(){
