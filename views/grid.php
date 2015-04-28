@@ -53,7 +53,7 @@
 				else {$newLine = true;}
 			}
 			if ($count == 0) {
-				echo "<div class='error_empty'>Aucune Timezone enregistrée. Cliquez sur <b>+</b> pour commencer !</div>";
+				echo "<div class='error_empty'><span class='vertical-align-text'>Aucune Timezone enregistrée. Cliquez sur <b>+</b> pour commencer !</span></div>";
 			}
 			?>
 				<tr class="invisible-tr">

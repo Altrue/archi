@@ -547,7 +547,10 @@ div.clock-line-content {
 	}
 	div.bottom-bar-login{
 		font-size: 18px !important;
-	}	
+	}
+	span.vertical-align-text {
+		font-size: 20px;
+	}
 }
 
 @media(max-width: 450px) {
@@ -557,6 +560,9 @@ div.clock-line-content {
 	div.bottom-bar-login{
 		font-size: 12px !important;
 	}	
+	span.vertical-align-text {
+		font-size: 15px;
+	}
 }
 
 @media(max-width:430px){
@@ -723,4 +729,18 @@ div.clock-line-content {
 /* CSS magic */
 .invisible-tr {
 	font-size: 0px;
+}
+
+.error_empty{
+	top: 50%;
+	width: 100%;
+	background-color: rgb(51, 51, 51);
+	height: 300px;
+	text-align:center;
+}
+
+span.vertical-align-text {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }

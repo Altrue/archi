@@ -43,6 +43,9 @@
 				<?php
 				$x++;
 			}
+			if ($count == 0) {
+				echo "<div class='error_empty'><span class='vertical-align-text'>Cliquez sur <b>la loupe</b> pour commencer !</span></div>";
+			}
 			?>
 		<a href="list"><div class="bottom-bar bottom-bar-add"><span>Retour à la liste</span></div></a>
 	</body>

@@ -17,6 +17,7 @@
 			$x = 1;
 			$count = $liste->getCount();
 			$tabColor = array('orange1', 'orange2', 'orange3', 'violet1', 'violet2', 'violet3');
+			
 			foreach($liste->getListObjet() as $timeZone){
 				$tzLibelle = $timeZone->getLibelle();
 				$explodedTz = array();
@@ -38,6 +39,9 @@
 				</div>
 				<?php
 				$x++;
+			}
+			if ($count == 0) {
+				echo "<div class='error_empty'><span class='vertical-align-text'>Aucune Timezone enregistrée. Cliquez sur <b>+</b> pour commencer !</span></div>";
 			}
 			?>
 			<a href="grid"><div id="bottom-link" data-count="<?php echo $count;?>" class="bottom-bar"><span>SWITCH TO GRID VIEW</span></div></a>
