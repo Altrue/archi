@@ -19,7 +19,7 @@
 		* @param string $codeLangue Code langue. par défaut défini à fr
 		*/
 		public function __construct($requete){
-			$this->request = new request($requete);
+			$this->request = new Request($requete);
 		}
 		/**
 		* Redirection

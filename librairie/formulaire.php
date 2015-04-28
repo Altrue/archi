@@ -1,7 +1,7 @@
 <?php	
 	require_once('librairie/collection.php');
 	require_once('librairie/input.php');
-	class formulaire {
+	class Formulaire {
 		//attributs
 		private $name;
 		private $method;
@@ -17,7 +17,7 @@
 			else{
 				throw new Exception('Type du paramètre method invalide !');
 			}
-			$this->collectionInput = new collection();
+			$this->collectionInput = new Collection();
 		}
 		
 		//get
@@ -33,7 +33,7 @@
 		
 		//ajoute un input à la collection et uniquement un input
 		public function addInput($input){
-			if(is_a($input,'input')){
+			if(is_a($input,'Input')){
 				$this->collectionInput->addObjet($input);
 			}
 			else{

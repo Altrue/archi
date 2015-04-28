@@ -22,7 +22,7 @@
 							</div>
 						</td>
 						<td class="td-search-check-icon">
-							<div class="search-check-icon"></div>
+							<input type="checkbox" id="check0" onclick="addOrDelete(0);" />
 						</td>
 					</tr>
 				</table>
@@ -102,10 +102,11 @@
 					</tr>
 				</table>
 			</div>
-		<a href="list/list"><div class="bottom-bar bottom-bar-add"><span>Double-cliquez sur une coche pour valider</span></div></a>
+		<a href="list"><div class="bottom-bar bottom-bar-add"><span>Double-cliquez sur une coche pour valider</span></div></a>
 	</body>
 	<footer>
 		<?php include ('utilities/footer.php'); ?>
+		<script type="text/javascript" src="js/addDelete.js"></script>
 	</footer>
 <?php
 

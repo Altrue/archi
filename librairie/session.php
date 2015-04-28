@@ -1,10 +1,10 @@
 <?php
 	//ajouter le blocage du compte pour plus de 5 tentatives
 
-	require_once('connectDBClass.php');
+	require_once('librairie/connectDBClass.php');
 	require_once('helper/userDao.php');
 	
-	class session {
+	class Session {
 		//attribut
 		private $loginUser;
 
@@ -24,9 +24,9 @@
 		public function connectUtilisateur($mdp){
 			$retour = 0;
 			if(!empty($this->loginUser) && !empty($mdp)){
-				$co = new connectDB();
+				$co = new ConnectDB();
 				$pdo = $co->connectBase();
-				$userDao = new userDAO();
+				$userDao = new UserDAO();
 				$user = $userDao->findUserByLog($pdo, $this->loginUser, $mdp);
 				if($user != null){
 					$_SESSION['user'] = serialize($this);
@@ -36,8 +36,9 @@
 			}
 			return $retour;
 		}
+		
 		public function changerMdp($mdp){
-			$connect = new connectBase();
+			$connect = new ConnectBase();
 			$pdo = $connect->connectBase();
 			$pdo->exec("UPDATE USER SET mdpUser = ".$pdo->quote($mdp)." WHERE loginUser = ".$pdo->quote($this->loginUser).";");
 			unset($pdo);

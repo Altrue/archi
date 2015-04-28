@@ -1,5 +1,5 @@
 <?php
-	class timeZone {
+	class TimeZone {
 		
 		//attr
 		private $id;

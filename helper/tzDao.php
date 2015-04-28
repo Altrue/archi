@@ -3,7 +3,7 @@
 	require_once('librairie/connectDBClass.php');
 	require_once('class/timeZone.php');
 	
-	class tzDao extends DAOClass {
+	class TzDao extends DAOClass {
 		
 		public function __construct(){
 			$this->tableName = "TIMEZONE";
@@ -14,7 +14,7 @@
 			$tz = null;
 			$pdostat = $this->findById($pdo, $id);
 			if($pdostat != null){
-				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'timeZone', array('id','libelle'));
+				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'TimeZone', array('id','libelle'));
 				$tz = $pdostat->fetch();
 				$pdostat->closeCursor();
 			}
@@ -26,7 +26,7 @@
 			$tabTz = null;
 			$pdostat = $this->findAll($pdo);
 			if($pdostat != null){
-				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'timeZone', array('id','libelle'));
+				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'TimeZone', array('id','libelle'));
 				while($tz = $pdostat->fetch()){
 					$tabTz[] = $tz;
 				}

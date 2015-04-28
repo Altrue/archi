@@ -1,5 +1,5 @@
 <?php
-	class input {
+	class Input {
 		//attributs
 		private $name;
 		private $value;

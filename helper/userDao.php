@@ -3,7 +3,7 @@
 	require_once('librairie/connectDBClass.php');
 	require_once('class/user.php');
 	
-	class userDao extends DAOClass {
+	class UserDao extends DAOClass {
 		
 		public function __construct(){
 			$this->tableName = "USER";
@@ -20,7 +20,7 @@
 			}
 			if($pdostat != null){
 				$res = $pdostat->fetch();
-				$user = new user($res['id'], $res['loginUser']);
+				$user = new User($res['id'], $res['loginUser']);
 				$pdostat->closeCursor();
 			}
 			return $user;
@@ -32,7 +32,7 @@
 			$pdostat = $this->findById($pdo, $id);
 			if($pdostat != null){
 				$res = $pdostat->fetch();
-				$user = new user($res['id'], $res['loginUser']);
+				$user = new User($res['id'], $res['loginUser']);
 				$pdostat->closeCursor();
 			}
 			return $user;
@@ -44,7 +44,7 @@
 			$pdostat = $this->findAll($pdo);
 			if($pdostat != null){
 				while($res = $pdostat->fetch()){
-					$tabUser[] = new user($res['id'], $res['loginUser']);
+					$tabUser[] = new User($res['id'], $res['loginUser']);
 				}
 				$pdostat->closeCursor();
 			}

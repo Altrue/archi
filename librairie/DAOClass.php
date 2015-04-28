@@ -8,7 +8,6 @@
 		//éxécute une requete SELECT et renvoi le résultat pdostatement ou null
 		public function query($pdo,$request){
 			$pdostat = $pdo->query($request);
-			//var_dump($pdostat->columnCount());
 			if($pdostat->rowCount() == 0){
 				$pdostat = null;
 			}
@@ -26,7 +25,6 @@
 			if($pdostat->rowCount() == 0){
 				$pdostat = null;
 			}
-			$pdostat->closeCursor();
 			return $pdostat;
 		}
 		
@@ -36,7 +34,6 @@
 			if($pdostat->rowCount() != 0){
 				$pdostat = null;
 			}
-			$pdostat->closeCursor();
 			return $pdostat;
 		}
 		

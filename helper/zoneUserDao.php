@@ -4,7 +4,7 @@
 	require_once('helper/tzDao.php');
 	require_once('class/user.php');
 	
-	class zoneUserDao extends DAOClass {
+	class ZoneUserDao extends DAOClass {
 		
 		public function __construct(){
 			$this->tableName = "ZONEUSER";
@@ -15,7 +15,7 @@
 			$pdostat = $this->query($pdo, "SELECT * FROM ZONEUSER WHERE idUser = ".$user->getId().";");
 			if($pdostat != null){
 				$user->setListTz(array());
-				$tzDao = new tzDao();
+				$tzDao = new TzDao();
 				while($res = $pdostat->fetch()){
 					$tz = $tzDao->findTzById($pdo, $res['idZone']);
 					$user->addTz($tz);

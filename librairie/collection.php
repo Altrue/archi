@@ -1,6 +1,5 @@
 <?php
-	require_once('connectDBClass.php');
-	class collection {
+	class Collection {
 		//attributs
 		private $listObjet;
 		private $countObjet;

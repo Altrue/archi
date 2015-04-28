@@ -1,5 +1,5 @@
 <?php
-	class connectDB {
+	class ConnectDB {
 		//attributs
 		private $pdoInstance;
 		//méthodes

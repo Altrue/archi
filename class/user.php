@@ -1,10 +1,9 @@
 <?php
 	//Chiffrement des données sensibles : toutes données pouvant ammené à l'identité de la personne
-	require_once('librairie/connectDBClass.php');
 	require_once('librairie/collection.php');
 	require_once('class/timeZone.php');
 	
-	class user {
+	class User {
 		//attributs
 		private $id;
 		private $loginUser;
@@ -16,7 +15,7 @@
 		public function __construct($id, $log){
 			$this->id = $id;
 			$this->loginUser = $log;
-			$this->listTz = new collection();
+			$this->listTz = new Collection();
 		}
 		
 		//get

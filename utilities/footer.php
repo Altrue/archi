@@ -1,6 +1,6 @@
-<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="../js/moment.js"></script>
-<script type="text/javascript" src="../js/moment-tz.js"></script>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/moment.js"></script>
+<script type="text/javascript" src="js/moment-tz.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 

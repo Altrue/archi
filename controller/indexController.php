@@ -3,21 +3,21 @@
 
 	require_once('librairie/formulaire.php');
 	require_once('librairie/session.php');
-	require_once('librairie/Controller.php');
+	require_once('librairie/controller.php');
 	require_once('librairie/connectDBClass.php');
 	require_once('librairie/ControllerInterface.php');
 	
-	class indexController extends Controller implements ControllerInterface{
+	class IndexController extends Controller implements ControllerInterface{
 		
 		public function indexAction(){
 			$err = null;
 			$var = $this->request->getPost('connexion');
 			if(isset($var)){
-				$formConnexion = new formulaire('connexion','POST');
-				$formConnexion->addInput(new input('login','text',$this->request->getPost('login'),null,100,true));
-				$formConnexion->addInput(new input('mdp','password',$this->request->getPost('mdp'),null,null,true));
+				$formConnexion = new Formulaire('connexion','POST');
+				$formConnexion->addInput(new Input('login','text',$this->request->getPost('login'),null,100,true));
+				$formConnexion->addInput(new Input('mdp','password',$this->request->getPost('mdp'),null,null,true));
 				if($formConnexion->isValid()){
-					$session = new session($formConnexion->selectInputValue('login'));
+					$session = new Session($formConnexion->selectInputValue('login'));
 					$c = $session->connectUtilisateur($formConnexion->selectInputValue('mdp'));
 					if($c != 1){
 						$err = "errL";
