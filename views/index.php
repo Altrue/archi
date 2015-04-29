@@ -14,6 +14,8 @@
 			</div>
 			<?php
 				if($message == 'deco'){echo '<div class="notice_deco"><span class="vertical-align-text2">Vous avez été déconnecté</span></div>';}
+				if($message == 'errS'){echo '<div class="notice_deco"><span class="vertical-align-text2">erreur de saisie</span></div>';}
+				if($message == 'errL'){echo '<div class="notice_deco"><span class="vertical-align-text2">login ou mot de passe incorrect</span></div>';}
 			?>
 			<div class="login-line nightblue1">
 				<table class="table-top-bar">
@@ -29,10 +31,6 @@
 									<input type="submit" class="submit-login" name="connexion" value="Connexion"/>
 								</form>
 							</div>
-							<?php
-								if($message == 'errS'){echo 'erreur de saisie';}
-								if($message == 'errL'){echo 'login ou mot de passe incorrect';}
-							?>
 						</td>
 					</tr>
 				</table>

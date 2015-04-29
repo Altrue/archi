@@ -6,8 +6,8 @@
 		<?php include ('utilities/header.php'); ?>
 	</header>
 	<body>
-		<p>404 Not Found !</p>
-		<a href="list"><div id="bottom-link" class="bottom-bar"><span>SWITCH TO LIST VIEW</span></div></a>
+		<div class='error_empty'><span class='vertical-align-text'>Page inconnue</span></div>
+		<a href="index.php"><div id="bottom-link" class="bottom-bar"><span>Retour</span></div></a>
 	</body>
 	<footer>
 	</footer>
