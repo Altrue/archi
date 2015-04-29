@@ -16,3 +16,8 @@
 		-autres
 			-js
 			-ressources (img, utilities, font)
+	-Critique
+		-amélioration --> factory de dao
+					  --> réorganisation des controller
+		-good	--> bonne compartimentation du code
+				--> classe très générique et par conséquent facilement réutilisable
