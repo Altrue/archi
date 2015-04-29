@@ -35,7 +35,21 @@
 			return $tabTz;
 		}
 		
-		//insert un user
+		//sélectionne toutes les tz dont le libelle contient la chaine recherchée
+		public function findAllBySearch($pdo, $locationString){
+			$tabTz = null;
+			$pdostat = $this->query($pdo, "SELECT * FROM TIMEZONE WHERE libelle = ".$pdo->quote($locationString).";");
+			if($pdostat != null){
+				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'TimeZone');
+				while($tz = $pdostat->fetch()){
+					$tabTz[] = $tz;
+				}
+				$pdostat->closeCursor();
+			}
+			return $tabTz;
+		}
+		
+		//insert une tz
 		public function insertTz($pdo, $tz){
 			$fields = array(
 				'libelle' => $tz->getLibelle(),
@@ -43,7 +57,7 @@
 			$this->insert($pdo, $fields);
 		}
 		
-		//delete un user
+		//delete une tz
 		public function deleteTz($pdo, $tz){
 			$this->delete($pdo, $tz->getId());
 		}

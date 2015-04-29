@@ -69,7 +69,13 @@
 			$co = new ConnectDB();
 			$pdo = $co->connectBase();
 			$tzDAO = new TzDao();
-			$liste = $tzDAO->findAllTz($pdo);
+			$liste = array();
+			if($this->request->getPost('search') !== null){
+				$liste = $tzDAO->findAllBySearch($pdo, $this->request->getPost('location'));
+			}
+			else{
+				$liste = $tzDAO->findAllTz($pdo);
+			}
 			$x = 0;
 			foreach($liste as $timeZone){
 				$explodedTz = array();
