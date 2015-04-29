@@ -595,6 +595,10 @@ div.clock-line-content {
 	background-image:url("../images/check2.png");
 }
 
+#input_search {
+
+}
+
 /* Catégorie : Responsive Add*/
 
 @media(max-width: 1000px) {

@@ -9,7 +9,9 @@
 		<div id="main">
 			<div class="top-bar">
 				<table class="table-top-bar">
-					<tr><td class="td-search-title">SEARCH LOCATION</td><td class="td-search-icon"><div class="td-search-div"></div></td></tr>
+					<form method="POST" action="add">
+						<tr><td class="td-search-title"><input type="text" id="input_search" name="location" placeholder="SEARCH LOCATION"/></td><td class="td-search-icon"><div class="td-search-div"><input type="submit" name="search" style="opacity:0; width:100%; height:100%;"></div></td></tr>
+					</form>
 				</table>
 			</div>
 			<a href="list"><div class="bottom-bar bottom-bar-add"><span>Retour à la liste</span></div></a>
