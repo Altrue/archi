@@ -70,28 +70,31 @@
 			$pdo = $co->connectBase();
 			$tzDAO = new TzDao();
 			$liste = array();
+			$tabVarView = array();
 			if($this->request->getPost('search') !== null){
-				$liste = $tzDAO->findAllBySearch($pdo, $this->request->getPost('location'));
+				$liste = $tzDAO->findAllBySearch($pdo, strtolower(str_replace(' ','_',$this->request->getPost('location'))));
 			}
 			else{
 				$liste = $tzDAO->findAllTz($pdo);
 			}
-			$x = 0;
-			foreach($liste as $timeZone){
-				$explodedTz = array();
-				$explodedTz = explode('/', $timeZone->getLibelle());
-				if (!isset($explodedTz[1])) {
-					$explodedTz[1] = "";
+			if(!empty($liste)){
+				$x = 0;
+				foreach($liste as $timeZone){
+					$explodedTz = array();
+					$explodedTz = explode('/', $timeZone->getLibelle());
+					if (!isset($explodedTz[1])) {
+						$explodedTz[1] = "";
+					}
+					if (isset($explodedTz[2])) {
+						$explodedTz[1] = $explodedTz[2];
+					}
+					$explodedTz[1] = str_replace("_", " ", $explodedTz[1]);
+					$tabVarView[$x][0] = $explodedTz;
+					$tabVarView[$x][1] = $timeZone->getId();
+					$zoneUser = new ZoneUserDao();
+					$tabVarView[$x][2] = $zoneUser->exist($pdo, $timeZone);
+					$x++;
 				}
-				if (isset($explodedTz[2])) {
-					$explodedTz[1] = $explodedTz[2];
-				}
-				$explodedTz[1] = str_replace("_", " ", $explodedTz[1]);
-				$tabVarView[$x][0] = $explodedTz;
-				$tabVarView[$x][1] = $timeZone->getId();
-				$zoneUser = new ZoneUserDao();
-				$tabVarView[$x][2] = $zoneUser->exist($pdo, $timeZone);
-				$x++;
 			}
 			$view = new View('views/');
 			$view->load('add.php');

@@ -38,7 +38,7 @@
 		//sélectionne toutes les tz dont le libelle contient la chaine recherchée
 		public function findAllBySearch($pdo, $locationString){
 			$tabTz = null;
-			$pdostat = $this->query($pdo, "SELECT * FROM TIMEZONE WHERE libelle = ".$pdo->quote($locationString).";");
+			$pdostat = $this->query($pdo, "SELECT * FROM TIMEZONE WHERE LOCATE(".$pdo->quote($locationString).",LOWER(libelle)) != 0;");
 			if($pdostat != null){
 				$pdostat->setFetchMode (PDO::FETCH_CLASS, 'TimeZone');
 				while($tz = $pdostat->fetch()){
