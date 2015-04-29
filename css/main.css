@@ -518,6 +518,14 @@ div.clock-line-content {
 	padding-left:2%;
 }
 
+#input_search {
+	background-color: transparent;
+	border: none;
+	color:#4C4A53;
+	font-size:35px;
+	width: 90%;
+}
+
 .td-search-icon {
 	width: 15%;
 	height: 100%;
