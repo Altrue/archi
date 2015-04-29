@@ -12,7 +12,7 @@
 		public function indexAction(){
 			$err = null;
 			$var = $this->request->getPost('connexion');
-			if(isset($var)){
+			if(isset($var) && !isset($_SESSION['user'])){
 				$formConnexion = new Formulaire('connexion','POST');
 				$formConnexion->addInput(new Input('login','text',$this->request->getPost('login'),null,100,true));
 				$formConnexion->addInput(new Input('mdp','password',$this->request->getPost('mdp'),null,null,true));
@@ -29,6 +29,9 @@
 				else{
 					$err = "errS";
 				}
+			}
+			if(isset($_SESSION['user'])){
+				$this->redirect('list');
 			}
 			$view = new View('views/');
 			$view->load('index.php');
