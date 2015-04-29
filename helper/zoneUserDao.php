@@ -39,4 +39,14 @@
 			$this->execute($pdo, "DELETE FROM ZONEUSER WHERE idUser = ".$user->getId()." AND idZone = ".$tz->getId().";");
 			$user->deleteTz($tz);
 		}
+		
+		//vérifie si la zone est sélectionnée par l'utilisateur
+		public function exist($pdo, $tz){
+			$retour = false;
+			$pdostat = $this->query($pdo, "SELECT * FROM ZONEUSER WHERE idZone = ".$tz->getId().";");
+			if($pdostat != null){
+				$retour = true;
+			}
+			return $retour;
+		}
 	}
