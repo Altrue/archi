@@ -13,7 +13,7 @@
 				</table>
 			</div>
 			<?php
-				if($message == 'deco'){echo 'Vous avez été déconnecté';}
+				if($message == 'deco'){echo '<div class="notice_deco"><span class="vertical-align-text2">Vous avez été déconnecté</span></div>';}
 			?>
 			<div class="login-line nightblue1">
 				<table class="table-top-bar">

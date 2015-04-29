@@ -10,7 +10,7 @@
 		<div id="main">
 			<div class="top-bar">
 				<table class="table-top-bar">
-					<tr><td class="td-refresh"><a href=""><div class="td-refresh-div"></div></a></td><td class="td-logo"></td><td class="td-plus"><a href="add"><div class="td-plus-div"></div></a></td></tr>
+					<tr><td class="td-refresh"><a href="deco"><div class="td-refresh-div"></div></a></td><td class="td-logo"></td><td class="td-plus"><a href="add"><div class="td-plus-div"></div></a></td></tr>
 				</table>
 			</div>
 			<table style="border-collapse:collapse;" cellspacing="0" cellpadding="0">

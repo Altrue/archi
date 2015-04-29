@@ -138,14 +138,14 @@ input:hover, input:focus{
 	width: 100%;
 	min-width: 90px;
 	height: 100%;
-	background-image:url("../images/refresh.png");
+	background-image:url("../images/logout.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	cursor:default;
 }
 
 .td-refresh-div:hover {
-	background-image:url("../images/refresh2.png");
+	background-image:url("../images/logout2.png");
 }
 
 .td-logo {
@@ -808,5 +808,19 @@ div.clock-line-content {
 span.vertical-align-text {
 	position: relative;
 	top: 50%;
+	transform: translateY(-50%);
+}
+
+.notice_deco{
+	top: 50%;
+	width: 100%;
+	background-color: rgb(51, 51, 51);
+	height: 100px;
+	text-align:center;
+}
+
+span.vertical-align-text2 {
+	position: relative;
+	top: 40%;
 	transform: translateY(-50%);
 }
