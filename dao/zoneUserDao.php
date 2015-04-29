@@ -1,8 +1,8 @@
 <?php
 	require_once('librairie/DAOClass.php');
 	require_once('librairie/connectDBClass.php');
-	require_once('helper/tzDao.php');
-	require_once('class/user.php');
+	require_once('dao/tzDao.php');
+	require_once('model/user.php');
 	
 	class ZoneUserDao extends DAOClass {
 		

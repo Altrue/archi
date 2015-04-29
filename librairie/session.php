@@ -2,7 +2,7 @@
 	//ajouter le blocage du compte pour plus de 5 tentatives
 
 	require_once('librairie/connectDBClass.php');
-	require_once('helper/userDao.php');
+	require_once('dao/userDao.php');
 	
 	class Session {
 		//attribut

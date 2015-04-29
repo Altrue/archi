@@ -3,9 +3,9 @@
 
 	require_once('librairie/formulaire.php');
 	require_once('librairie/session.php');
-	require_once('helper/userDao.php');
-	require_once('helper/tzDao.php');
-	require_once('helper/zoneUserDao.php');
+	require_once('dao/userDao.php');
+	require_once('dao/tzDao.php');
+	require_once('dao/zoneUserDao.php');
 	require_once('librairie/ControllerInterface.php');
 	require_once('librairie/controller.php');
 	

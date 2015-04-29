@@ -1,7 +1,7 @@
 <?php
 	require_once('librairie/DAOClass.php');
 	require_once('librairie/connectDBClass.php');
-	require_once('class/timeZone.php');
+	require_once('model/timeZone.php');
 	
 	class TzDao extends DAOClass {
 		
