@@ -524,6 +524,7 @@ div.clock-line-content {
 	color:#4C4A53;
 	font-size:35px;
 	width: 90%;
+	text-transform:uppercase;
 }
 
 .td-search-icon {

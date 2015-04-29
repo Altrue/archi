@@ -62,12 +62,9 @@
 					</td>
 				</tr>
 			</table>
-			<a href="list"><div id="bottom-link" data-count="<?php echo $count;?>" class="bottom-bar"><span>SWITCH TO LIST VIEW</span></div></a>
+			<a href="list"><div id="bottom-link" data-count="<?php echo $count;?>" class="bottom-bar"><span>Affichage en liste</span></div></a>
 	</body>
 	<footer>
 		<?php include ('utilities/footer.php'); ?>
 	</footer>
-<?php
-
-?>
 </html>

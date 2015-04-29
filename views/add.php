@@ -10,7 +10,7 @@
 			<div class="top-bar">
 				<table class="table-top-bar">
 					<form method="POST" action="add">
-						<tr><td class="td-search-title"><input type="text" id="input_search" name="location" placeholder="SEARCH LOCATION"/></td><td class="td-search-icon"><div class="td-search-div"><input type="submit" name="search" style="opacity:0; width:100%; height:100%;"></div></td></tr>
+						<tr><td class="td-search-title"><input type="text" id="input_search" name="location" placeholder="Rechercher"/></td><td class="td-search-icon"><div class="td-search-div"><input type="submit" name="search" style="opacity:0; width:100%; height:100%;"></div></td></tr>
 					</form>
 				</table>
 			</div>
