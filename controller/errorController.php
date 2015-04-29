@@ -5,6 +5,8 @@
 	class ErrorController extends Controller implements ControllerInterface{
 		
 		public function indexAction(){
-			header("HTTP/1.0 404 Not Found");
+			$view = new View('views/');
+			$view->load('notFound404.php');
+			$view->render();
 		}
 	}

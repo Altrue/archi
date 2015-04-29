@@ -138,7 +138,7 @@ class Router
         $this->action       = (!empty($this->action)) ? $this->action : $this->defaultAction;
         $ctrlPath           = str_replace('_', DIRECTORY_SEPARATOR, $this->controller); // Gestion des sous dossiers dans les controllers
         $this->file         = realpath($this->path) . DIRECTORY_SEPARATOR . $ctrlPath . '.php';
-        
+		
 		//is_file bien plus rapide que file_exists
         if (!is_file($this->file))
         {
