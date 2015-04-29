@@ -1,5 +1,7 @@
 function addOrDelete(id){
-	if(document.getElementById('check'+id).checked == true){
+	
+	if(document.getElementById('check'+id).checked == false){
+		$('#check'+id).prop('checked', true);
         $.ajax({
 			url: 'ajout',
 			type: 'POST',
@@ -18,6 +20,7 @@ function addOrDelete(id){
 		});
     }
     else{
+		$('#check'+id).prop('checked', false);
         $.ajax({
 			url: 'delete',
 			type: 'POST',

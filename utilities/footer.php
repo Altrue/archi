@@ -61,7 +61,7 @@ $(document).ready(function(){
 			currentCount = currentCount + 1;
 		}
 		if (x < 1) {
-			$( ".deuxpoints" ).css( "opacity", "0" );
+			$( ".deuxpoints" ).css( "opacity", "0.5" );
 			x = 1;
 		}
 		else {

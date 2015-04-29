@@ -26,7 +26,10 @@
 								</div>
 							</td>
 							<td class="td-search-check-icon">
-								<input type="checkbox" id="check<?php echo $tabTime[1];?>" <?php if($tabTime[2] === true){echo 'checked';}?> onclick="addOrDelete(<?php echo $tabTime[1];?>);" />
+								<div class="squaredTwo<?php echo $x%2 + 1;?>" onclick="addOrDelete(<?php echo $tabTime[1];?>);">
+									<input type="checkbox" id="check<?php echo $tabTime[1];?>" <?php if($tabTime[2] === true){echo 'checked';}?> />
+									<label for="squaredTwo"></label> <!-- Laisser le label vide, mais ne pas le supprimer parce qu'apparemment c'est nécessaire o_O -->
+								</div>
 							</td>
 						</tr>
 					</table>

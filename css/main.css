@@ -82,6 +82,7 @@ input:hover, input:focus{
 
 #main {
 	width: 70%;
+	max-width: 900px;
 	height: 100%;
 	margin: auto;
 	background-color: transparent;
@@ -203,6 +204,71 @@ input:hover, input:focus{
 
 .bottom-bar-add:hover {
 	color:#FFF !important;
+}
+
+/* SQUARED TWO */
+.squaredTwo1, .squaredTwo2 {
+	width: 28px;
+	height: 28px;
+	background: transparent;
+	margin: 18px auto;
+	position: relative;
+}
+
+.squaredTwo1 label{
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 4px;
+	top: 4px;
+	background: #272530;
+}
+
+.squaredTwo2 label{
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 4px;
+	top: 4px;
+	background: #1d1c24;
+}
+
+.squaredTwo1 label:after, .squaredTwo2 label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 1;
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 10px;
+	background: transparent;
+	top: 4px;
+	left: 4px;
+	border: 3px solid #FFF;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.squaredTwo1 label:hover::after, .squaredTwo2 label:hover::after {
+	border: 3px solid #eba06f;
+	border-top: none;
+	border-right: none;
+	opacity: 1;
+}
+
+.squaredTwo1 input[type=checkbox]:checked + label:after, .squaredTwo2 input[type=checkbox]:checked + label:after {
+	border: 3px solid #dd7632;
+	border-top: none;
+	border-right: none;
+	opacity: 1;
 }
 
 /* Catégorie : Grid*/
