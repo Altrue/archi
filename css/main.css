@@ -443,7 +443,7 @@ div.clock-line-content {
 
 /* Catégorie : Responsive Line*/
 
-@media (max-height:700px) {
+@media (max-height:3000px) {
 	.clock-line-titre {
 		font-size:20px;
 	}
