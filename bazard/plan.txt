@@ -1,0 +1,18 @@
+
+	-démonstration
+		-connexion
+		-les différentes vues
+		-ajout/suppression
+		-déconnexion
+		-404
+		
+	-structure général
+		-routing (index, htaccess)
+		-controller
+		-views
+		-model
+		-dao
+		-librairies
+		-autres
+			-js
+			-ressources (img, utilities, font)
