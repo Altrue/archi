@@ -17,4 +17,5 @@
 	$router->addRule(':add', array('controller' => 'TzController', 'action' => 'listAllTzAction'));
 	$router->addRule(':ajout', array('controller' => 'TzController', 'action' => 'addTzAction'));
 	$router->addRule(':delete', array('controller' => 'TzController', 'action' => 'deleteTzAction'));
+	$router->addRule(':nolog', array('controller' => 'IndexController', 'action' => 'indexAction'));
 	$router->load();
