@@ -46,7 +46,7 @@
 			if(isset($_SESSION['user'])){
 				unset($_SESSION['user']);
 				session_destroy();
-				$mess = 'deco;'
+				$mess = 'deco';
 			}
 			$view->set('message',$mess);
 			$view->render();
