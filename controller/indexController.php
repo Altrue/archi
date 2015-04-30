@@ -42,11 +42,13 @@
 		public function logoutAction(){
 			$view = new View('views/');
 			$view->load('index.php');
+			$mess = null;
 			if(isset($_SESSION['user'])){
 				unset($_SESSION['user']);
 				session_destroy();
-				$view->set('message','deco');
+				$mess = 'deco;'
 			}
+			$view->set('message',$mess);
 			$view->render();
 		}
 	}
