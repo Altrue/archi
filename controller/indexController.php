@@ -40,13 +40,13 @@
 		}
 		
 		public function logoutAction(){
+			$view = new View('views/');
+			$view->load('index.php');
 			if(isset($_SESSION['user'])){
 				unset($_SESSION['user']);
 				session_destroy();
-				$view = new View('views/');
-				$view->load('index.php');
 				$view->set('message','deco');
-				$view->render();
 			}
+			$view->render();
 		}
 	}
