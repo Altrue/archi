@@ -11,7 +11,6 @@ $(document).ready(function(){
 			Exemple : 1, 2, 3, 4, etc...
 		*/
 		function time(tzlibelle,line) {
-			tzlibelle = ''+tzlibelle+'';
 			var offset = moment().tz(tzlibelle).format("ZZ").slice(0,-2);;
 			var d = new Date();
 			var localTime = d.getTime();
@@ -49,6 +48,16 @@ $(document).ready(function(){
 			var id_date = "line"+line+"-3";
 			resultat_date = jours[jour]+' '+j+' '+mois[moi]+' '+annee;
 			document.getElementById(id_date).innerHTML = resultat_date;
+			
+			var id_line = "div-line-"+line;
+			var color_class = "";
+			if (h < 4) {color_class = "violet2";}
+			else if (h < 7) {color_class = "violet3";}
+			else if (h < 12) {color_class = "orange1";}
+			else if (h < 17) {color_class = "orange2";}
+			else if (h < 21) {color_class = "orange3";}
+			else {color_class = "violet1";}
+			document.getElementById(id_line).classList.add(color_class);
 			return true;
 		}
 	

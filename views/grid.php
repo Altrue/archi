@@ -17,7 +17,6 @@
 				<?php
 			$x = 1;
 			$count = $liste->getCount();
-			$tabColor = array('orange1', 'orange2', 'orange3', 'violet1', 'violet2', 'violet3');
 			$newLine = true;
 			foreach($liste->getListObjet() as $timeZone){
 				$tzLibelle = $timeZone->getLibelle();
@@ -33,7 +32,7 @@
 				if ($newLine) {echo"<tr>";}
 				?>
 				<td class="td-clock-grid">
-					<div class="clock-grid <?php echo $tabColor[$x%6]; ?>">
+					<div id="div-line-<?php echo $x;?>" class="clock-grid">
 						<div class="clock-grid-content">
 							<div class="clock-grid-subcontent">
 								<span class="clock-grid-span">

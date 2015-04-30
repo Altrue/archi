@@ -16,7 +16,6 @@
 			<?php
 			$x = 1;
 			$count = $liste->getCount();
-			$tabColor = array('orange1', 'orange2', 'orange3', 'violet1', 'violet2', 'violet3');
 			
 			foreach($liste->getListObjet() as $timeZone){
 				$tzLibelle = $timeZone->getLibelle();
@@ -30,7 +29,7 @@
 				}
 				$explodedTz[1] = str_replace("_", " ", $explodedTz[1]);
 				?>
-				<div class="clock-line <?php echo $tabColor[$x%6]; ?>">
+				<div id="div-line-<?php echo $x;?>" class="clock-line">
 					<div class="clock-line-content">
 						<span id="line<?php echo $x;?>-1" data-tzlibelle="<?php echo $tzLibelle;?>" class="clock-line-time"></span><br>
 						<span id="line<?php echo $x;?>-2" class="clock-line-titre"><b> <?php echo $explodedTz[0];?></b> <?php echo $explodedTz[1];?></span><br>
